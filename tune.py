@@ -1,7 +1,6 @@
 import itertools
 import random
 import pandas as pd
-from deap import base, creator, tools, algorithms
 
 class MyScheduler():
     def __init__(self, opt):
@@ -61,45 +60,73 @@ class MyScheduler():
         opt.activation = self.config[index][3]
         opt.optimizer = self.config[index][4]
         return False
-
+        
 class MySchedulerGA():
     def __init__(self, opt):
         self.activations = ['relu', 'sigmoid', 'hardtanh', 'softmax']
         self.optimizer_choices = ['Adam', 'SGD', 'Adagrad', 'RMSprop']
+        self.population_size = 10
+        self.mutation_rate = 0.1
         self.sum_epoch = 0
         self.min_epoch = opt.epoch_min
         self.limit_epoch = opt.epoch_limit
         self.result = []
-        self.current_individual = None  # 現在の個体を保持する
-        creator.create("FitnessMax", base.Fitness, weights=(1.0,))
-        creator.create("Individual", list, fitness=creator.FitnessMax)
+        self.batchSize = [16, 32, 64, 128]
+        self.epoch = [10, 15, 20]
+        self.lr = [0.001, 0.002, 0.004, 0.01, 0.02]
+        self.activation = [0, 1, 2, 3]
+        self.optimizer = [0, 1, 2, 3]
+        
+        self.population = self.initialize_population(opt)
+    
+    def initialize_population(self, opt):
+        population = []
+        for _ in range(self.population_size):
+            individual = {
+                'batchSize': random.choice(self.batchSize),
+                'epoch': random.choice(self.epoch),
+                'lr': random.choice(self.lr),
+                'activation': random.choice(self.activation),
+                'optimizer': random.choice(self.optimizer)
+            }
+            population.append(individual)
+        # Ensure the initial configuration is included
+        population.append({
+            'batchSize': opt.batchSize,
+            'epoch': opt.epoch,
+            'lr': opt.lr,
+            'activation': opt.activation,
+            'optimizer': opt.optimizer
+        })
+        return population
 
-        # 遺伝的アルゴリズムの設定
-        self.toolbox = base.Toolbox()
-        self.toolbox.register("attr_batch_size", random.choice, [16, 32, 64, 128])
-        self.toolbox.register("attr_epoch", random.choice, [10, 15, 20])
-        self.toolbox.register("attr_lr", random.uniform, 0.001, 0.02)
-        self.toolbox.register("attr_activation", random.choice, [0, 1, 2, 3])
-        self.toolbox.register("attr_optimizer", random.choice, [0, 1, 2, 3])
+    def evaluate_fitness(self, history):
+        return history["validation_acc"][-1]
 
-        self.toolbox.register("individual", tools.initCycle, creator.Individual,
-                              (self.toolbox.attr_batch_size,
-                               self.toolbox.attr_epoch,
-                               self.toolbox.attr_lr,
-                               self.toolbox.attr_activation,
-                               self.toolbox.attr_optimizer), n=1)
+    def select_parents(self):
+        parents = sorted(self.population, key=lambda x: x['fitness'], reverse=True)
+        return parents[:2]  # Select top 2 individuals
 
-        self.toolbox.register("population", tools.initRepeat, list, self.toolbox.individual)
-        self.toolbox.register("mate", tools.cxTwoPoint)
-        self.toolbox.register("mutate", tools.mutFlipBit, indpb=0.05)
-        self.toolbox.register("select", tools.selTournament, tournsize=3)
-        self.toolbox.register("evaluate", self.evaluate)
+    def crossover(self, parent1, parent2):
+        child = {}
+        for key in parent1:
+            child[key] = parent1[key] if random.random() < 0.5 else parent2[key]
+        return child
 
-    def count_epoch(self, epoch):
-        return self.sum_epoch + epoch >= self.limit_epoch
+    def mutate(self, individual):
+        if random.random() < self.mutation_rate:
+            individual['batchSize'] = random.choice(self.batchSize)
+        if random.random() < self.mutation_rate:
+            individual['epoch'] = random.choice(self.epoch)
+        if random.random() < self.mutation_rate:
+            individual['lr'] = random.choice(self.lr)
+        if random.random() < self.mutation_rate:
+            individual['activation'] = random.choice(self.activation)
+        if random.random() < self.mutation_rate:
+            individual['optimizer'] = random.choice(self.optimizer)
 
     def eval(self, epoch, history):
-        if self.count_epoch(epoch):
+        if self.sum_epoch >= self.limit_epoch:
             return True
         if epoch <= self.min_epoch:
             return False
@@ -108,42 +135,46 @@ class MySchedulerGA():
         else:
             return False
 
-    def update_result(self, acc):
-        if self.current_individual is not None:
-            batch_size, epoch, lr, activation, optimizer = self.current_individual
-            self.result.append([batch_size, epoch, lr, self.activations[activation], self.optimizer_choices[optimizer], epoch, acc])
+    def search(self, index, epoch, opt, history):
+        self.sum_epoch += epoch
+        fitness = self.evaluate_fitness(history)
+        self.result.append([opt.batchSize, opt.epoch, opt.lr, self.activations[opt.activation], self.optimizer_choices[opt.optimizer], epoch, fitness])
+        
+        if self.sum_epoch >= self.limit_epoch:
+            self.result = sorted(self.result, reverse=True, key=lambda x: x[6])
+            df = pd.DataFrame(self.result, columns=['batchSize', 'epoch', 'learning rate', 'activation', 'optimizer', 'actual epoch', 'latest accuracy'])
+            df.to_csv('./logs/optimize.txt', sep='\t')
+            df.to_csv('./logs/optimize.csv', sep=',')
+            best_individual = self.result[0]
+            opt.batchSize = best_individual[0]
+            opt.epoch = best_individual[1]
+            opt.lr = best_individual[2]
+            opt.activation = self.activations.index(best_individual[3])
+            opt.optimizer = self.optimizer_choices.index(best_individual[4])
+            return True
+        
+        # 現在の集団の適応度を評価
+        for individual in self.population:
+            individual['fitness'] = fitness
 
-    def get_next(self, opt):
-        if self.current_individual is None:
-            self.current_individual = self.toolbox.individual()
-        opt.batchSize, opt.epoch, opt.lr, opt.activation, opt.optimizer = self.current_individual
-        return self.current_individual
+        # 親の選択
+        parent1, parent2 = self.select_parents()
 
-    def evaluate(self, individual):
-        batch_size, epoch, lr, activation, optimizer = individual
-        return (random.uniform(0.8, 1.0),)
+        # 交叉と突然変異による新しい個体群の生成
+        new_population = []
+        for _ in range(self.population_size):
+            child = self.crossover(parent1, parent2)
+            self.mutate(child)
+            new_population.append(child)
+        
+        self.population = new_population
 
-    def search(self, opt):
-        # 現在の個体を評価
-        acc = self.result[-1][-1] if self.result else 0
-        self.update_result(acc)
-
-        # 初期化
-        population = self.toolbox.population(n=50)
-        hof = tools.HallOfFame(1)
-
-        # 遺伝的アルゴリズムの適用
-        algorithms.eaSimple(population, self.toolbox, cxpb=0.5, mutpb=0.2, ngen=10, halloffame=hof, verbose=True)
-
-        # 結果の保存と最適ハイパーパラメータの設定
-        self.result = sorted(self.result, reverse=True, key=lambda x: x[6])
-        df = pd.DataFrame(self.result, columns=['batchSize', 'epoch', 'learning rate', 'activation', 'optimizer', 'actual epoch', 'latest accuracy'])
-        df.to_csv('./logs/optimize_ga.txt', sep='\t')
-        df.to_csv('./logs/optimize_ga.csv', sep=',')
-
-        best_ind = hof[0]
-        opt.batchSize, opt.epoch, opt.lr, opt.activation, opt.optimizer = best_ind
-
-        # 新しい個体を取得
-        self.current_individual = self.toolbox.individual()
-        return True if self.count_epoch(0) else False
+        # 新しいハイパーパラメータをoptに設定
+        next_individual = self.population[0]
+        opt.batchSize = next_individual['batchSize']
+        opt.epoch = next_individual['epoch']
+        opt.lr = next_individual['lr']
+        opt.activation = next_individual['activation']
+        opt.optimizer = next_individual['optimizer']
+        
+        return False
