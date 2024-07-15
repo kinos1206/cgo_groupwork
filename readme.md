@@ -5,10 +5,7 @@
 - pandas 2.2.2
 - Pytorch 2.0.1
 - torchvision 0.15.2
-## Install
-``` bash
-pip install deap
-```  
+
 ## Dataset
 The mnist dataset will be saved in the directory `./data`. 
 ## Training
