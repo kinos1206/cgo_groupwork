@@ -1,3 +1,4 @@
+
 import os
 import torch
 import torch.nn.functional as f
@@ -5,7 +6,7 @@ from matplotlib import pyplot as plt
 from dataloader import load_MNIST
 from Network import MyNet
 from options import Options
-from tune import MyScheduler, MySchedulerGA 
+from tune import MyScheduler, , MySchedulerGA 
 
 #引数の読み込み
 opt = Options().parse()
@@ -109,17 +110,10 @@ while True:
     if loop == -1: break
 
     #ハイパーパラメータの更新, 最適化を続けるか判定
-    if opt.search_method == 'genetic':
-        scheduler.sum_epoch += opt.epoch
-        scheduler.update_result(history["validation_acc"][-1])
-        if scheduler.search(opt):
-            loop = -1
-            continue
-    else:
-        if scheduler.search(loop-1, e+1, opt, history):
-            loop = -1
-            continue
-
+    if scheduler.search(loop-1, e+1, opt, history):
+        #最も
+        loop = -1
+        continue
 
     loop += 1
 
@@ -135,7 +129,7 @@ ax1.plot(history["validation_loss"], linestyle='-', label='validation_loss_%d_%d
 ax2.plot(history["validation_acc"], linestyle='-', label='validation_acc_%d_%d_%f_%d_%d' % (opt.batchSize, opt.epoch, opt.lr, opt.activation, opt.optimizer))
 ax1.legend()
 ax2.legend()
-dirname = "/home/Kojun/anaconda3/cgo_groupwork/logs"
+dirname = "./logs/"
 os.makedirs(dirname, exist_ok=True)
 fig_loss.savefig(dirname + "train_loss.png")
 fig_acc.savefig(dirname + "test_acc.png")
