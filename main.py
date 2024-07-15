@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 from dataloader import load_MNIST
 from Network import MyNet
 from options import Options
-from tune import MyScheduler, , MySchedulerGA 
+from tune import MyScheduler, MySchedulerGA 
 
 #引数の読み込み
 opt = Options().parse()
