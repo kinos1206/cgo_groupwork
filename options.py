@@ -1,10 +1,10 @@
 import argparse
 import os
+
 import torch
-import torch.nn.functional as f
 
 
-class Options():
+class Options:
     def __init__(self):
         self.parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
         self.initialized = False
@@ -19,7 +19,7 @@ class Options():
         self.parser.add_argument('--optimizer', type=int, default=0, help='input initial optimizer')
         self.parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         self.parser.add_argument('--model_dir', type=str, default='./model', help='models are saved here')
-        
+
         self.initialized = True
 
     def parse(self):
