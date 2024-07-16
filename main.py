@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 from dataloader import load_MNIST
 from Network import MyNet
 from options import Options
-from tune import MyScheduler, MySchedulerGA, MySchedulerPSO 
+from tune import MyScheduler, MySchedulerGA, MySchedulerPSO, MySchedulerGS
 
 #引数の読み込み
 opt = Options().parse()
@@ -15,6 +15,8 @@ if opt.search_method == 'genetic':
     scheduler = MySchedulerGA(opt)
 elif opt.search_method == 'pso':
     scheduler = MySchedulerPSO(opt)
+elif opt.search_method == 'grid':
+    scheduler = MySchedulerGS(opt)
 else:
     scheduler = MyScheduler(opt)
 
