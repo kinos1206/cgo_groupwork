@@ -1,9 +1,12 @@
 import torch.nn as nn
 import torch.nn.functional as f
+from torch import Tensor
+
+from .options import ParsedOptions
 
 
 class MyNet(nn.Module):
-    def __init__(self, opt, activations):
+    def __init__(self, opt: ParsedOptions, activations: list[str]):
         super(MyNet, self).__init__()
         self.conv1 = nn.Conv2d(1, 32, 3, 1)
         self.conv2 = nn.Conv2d(32, 64, 3, 1)
@@ -15,7 +18,7 @@ class MyNet(nn.Module):
         self.activations = activations
         self.activation = eval('f.' + self.activations[opt.activation])
 
-    def forward(self, x):
+    def forward(self, x: Tensor) -> Tensor:
         x = self.conv1(x)
         x = self.activation(x)
         x = self.conv2(x)

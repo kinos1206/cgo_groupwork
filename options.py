@@ -1,7 +1,21 @@
 import argparse
 import os
+from dataclasses import dataclass
 
 import torch
+
+
+@dataclass
+class ParsedOptions:
+    epoch_limit: int
+    epoch_min: int
+    batchSize: int
+    epoch: int
+    lr: float
+    activation: int
+    optimizer: int
+    gpu_ids: list[int]
+    model_dir: str
 
 
 class Options:
@@ -22,7 +36,7 @@ class Options:
 
         self.initialized = True
 
-    def parse(self):
+    def parse(self) -> ParsedOptions:
         if not self.initialized:
             self.initialize()
         self.opt = self.parser.parse_args()
@@ -38,6 +52,18 @@ class Options:
         if len(self.opt.gpu_ids) > 0:
             torch.cuda.set_device(self.opt.gpu_ids[0])
 
+        parsed_opt = ParsedOptions(
+            epoch_limit=self.opt.epoch_limit,
+            epoch_min=self.opt.epoch_min,
+            batchSize=self.opt.batchSize,
+            epoch=self.opt.epoch,
+            lr=self.opt.lr,
+            activation=self.opt.activation,
+            optimizer=self.opt.optimizer,
+            gpu_ids=self.opt.gpu_ids,
+            model_dir=self.opt.model_dir,
+        )
+
         args = vars(self.opt)
 
         print('------------ Options -------------')
@@ -46,22 +72,21 @@ class Options:
         print('-------------- End ----------------')
 
         # save to the disk
-        self.mkdirs(self.opt.model_dir)
-        file_name = os.path.join(self.opt.model_dir, 'option.txt')
+        self.mkdirs(parsed_opt.model_dir)
+        file_name = os.path.join(parsed_opt.model_dir, 'option.txt')
         with open(file_name, 'wt') as opt_file:
             opt_file.write('------------ Options -------------\n')
             for k, v in sorted(args.items()):
                 opt_file.write('%s: %s\n' % (str(k), str(v)))
             opt_file.write('-------------- End ----------------\n')
-        return self.opt
+        return parsed_opt
 
-    def mkdir(self, path):
+    def mkdir(self, path: str):
         if not os.path.exists(path):
             os.makedirs(path)
 
-    def mkdirs(self, paths):
-        if isinstance(paths, list) and not isinstance(paths, str):
-            for path in paths:
-                self.mkdir(path)
-        else:
+    def mkdirs(self, paths: list[str] | str):
+        if isinstance(paths, str):
             self.mkdir(paths)
+        for path in paths:
+            self.mkdir(path)
