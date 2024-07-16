@@ -1,4 +1,5 @@
 import os
+from typing import Sized
 
 import torch
 import torch.nn.functional as f
@@ -93,8 +94,12 @@ while True:
                 predict = output.argmax(dim=1, keepdim=True)
                 accuracy += predict.eq(target.view_as(predict)).sum().item()
 
-        val_loss /= len(data_loader['validation'].dataset)
-        accuracy /= len(data_loader['validation'].dataset)
+        dataset = data_loader['validation'].dataset
+        if isinstance(dataset, Sized):
+            val_loss /= len(dataset)
+            accuracy /= len(dataset)
+        else:
+            raise TypeError('Dataset does not support len()')
 
         print('Validation loss: {}, Accuracy: {}\n'.format(val_loss, accuracy))
         history['validation_loss'].append(val_loss)
