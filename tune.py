@@ -1,5 +1,4 @@
 import itertools
-import os
 import random
 
 import pandas as pd
@@ -58,9 +57,6 @@ class MyScheduler:
                 history['validation_acc'][-1],
             ]
         )
-
-        if not os.path.exists('./logs'):
-            os.makedirs('./logs')
 
         if self.count_epoch(0):
             self.result = sorted(self.result, reverse=True, key=lambda x: x[6])

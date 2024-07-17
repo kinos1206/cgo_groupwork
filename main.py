@@ -1,6 +1,8 @@
 import os
+import time
 from typing import Sized
 
+import pandas as pd
 import torch
 import torch.nn.functional as f
 from matplotlib import pyplot as plt
@@ -28,7 +30,13 @@ ax2.set_ylabel('accuracy')
 ax2.set_title('Test accuracy')
 ax2.grid()
 
+
+# 結果保存用ディレクトリの作成
+os.makedirs('./logs', exist_ok=True)  # ディレクトリを変更
+
 loop = 1
+start_time = time.time()  # 全体の時間計測の開始
+optimization_time = 0  # 最適化部分の時間計測の開始
 
 while True:
     # 学習結果の保存
@@ -115,13 +123,28 @@ while True:
     if loop == -1:
         break
 
+    # 学習履歴の保存
+    history_df = pd.DataFrame(history)
+    history_df.to_csv(f'./logs/history_{loop - 1}.csv', index=False)  # ログディレクトリに保存
+
     # ハイパーパラメータの更新, 最適化を続けるか判定
+    optimization_start_time = time.time()  # 最適化部分の時間計測の開始
     if scheduler.search(loop - 1, e + 1, opt, history):
-        # 最も
         loop = -1
         continue
+    optimization_end_time = time.time()  # 最適化部分の時間計測の終了
+    optimization_time += optimization_end_time - optimization_start_time
 
     loop += 1
+
+end_time = time.time()  # 全体の時間計測の終了
+elapsed_time = end_time - start_time
+
+# 結果をファイルに保存
+with open('./logs/optimization_summary.txt', 'w') as f:
+    f.write(f'Total epochs: {scheduler.sum_epoch}\n')
+    f.write(f'Elapsed time (total): {elapsed_time:.2f} seconds\n')
+    f.write(f'Elapsed time (optimization): {optimization_time:.6f} seconds\n')
 
 
 # モデルを保存する
