@@ -141,7 +141,7 @@ elapsed_time = end_time - start_time
 with open('./logs/optimization_summary.txt', 'w') as f:
     f.write(f"Total epochs: {scheduler.sum_epoch}\n")
     f.write(f"Elapsed time (total): {elapsed_time:.2f} seconds\n")
-    f.write(f"Elapsed time (optimization): {optimization_time:.2f} seconds\n")
+    f.write(f"Elapsed time (optimization): {optimization_time:.6f} seconds\n")
 
 # モデルを保存する
 os.makedirs('./model', exist_ok=True)
