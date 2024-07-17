@@ -18,7 +18,7 @@ if opt.search_method == 'genetic':
 elif opt.search_method == 'pso':
     scheduler = MySchedulerPSO(opt)
 elif opt.search_method == 'grid':
-    scheduler = MySchedulerGridSearch(opt)
+    scheduler = MySchedulerGS(opt)
 else:
     scheduler = MyScheduler(opt)
 
