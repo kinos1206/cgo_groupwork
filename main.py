@@ -44,7 +44,6 @@ os.makedirs('./logs/history', exist_ok=True)
 loop = 1
 
 start_time = time.time()  # 全体、最適化部分の時間計測の開始
-optimization_time = 0  # 最適化部分の時間計測の開始
 
 while True:
     # 学習結果の保存
@@ -130,14 +129,11 @@ while True:
     history_df.to_csv(f'./logs/history/history_{loop - 1}.csv', index=False)  # ログディレクトリに保存
 
     # ハイパーパラメータの更新, 最適化を続けるか判定
-    optimization_start_time = time.time()  # 最適化部分の時間計測の開始
     if scheduler.search(loop - 1, e + 1, opt, history):
         end_sheduler = time.time()  # 最適化部分の時間計測の終了
         print('\n--------- Train with optimised hyper parameters ---------\n')
         loop = -1
         continue
-    optimization_end_time = time.time()  # 最適化部分の時間計測の終了
-    optimization_time += optimization_end_time - optimization_start_time
 
     loop += 1
 
