@@ -2,7 +2,7 @@ import torch.nn as nn
 import torch.nn.functional as f
 from torch import Tensor
 
-from .options import TOptions
+from options import TOptions
 
 
 class MyNet(nn.Module):

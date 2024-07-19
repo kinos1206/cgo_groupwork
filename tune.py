@@ -3,7 +3,7 @@ import random
 
 import pandas as pd
 
-from .options import TOptions
+from options import TOptions
 
 
 # ランダムサーチ

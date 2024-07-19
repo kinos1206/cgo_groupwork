@@ -93,5 +93,6 @@ class Options:
     def mkdirs(self, paths: list[str] | str):
         if isinstance(paths, str):
             self.mkdir(paths)
-        for path in paths:
-            self.mkdir(path)
+        else:
+            for path in paths:
+                self.mkdir(path)
