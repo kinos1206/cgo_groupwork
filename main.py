@@ -118,7 +118,11 @@ while True:
             if scheduler.eval(e+1, history):
                 break
     
-    if loop == -1: break
+    if loop == -1: 
+        # 学習履歴の保存
+        history_df = pd.DataFrame(history)
+        history_df.to_csv(f"./logs/history/history_optimised.csv", index=False)  # ログディレクトリに保存
+        break
 
     # 学習履歴の保存
     history_df = pd.DataFrame(history)
@@ -156,5 +160,7 @@ message = ""
 message += f"Total epochs: {scheduler.sum_epoch}\n"
 message += f"Elapsed time (total): {elapsed_time:.2f} seconds\n"
 message += f"Elapsed time (optimization): {time_sheduler:.6f}\n"
+latest_acc = history["validation_acc"][-1]
+message += f"Accuracy with optimized parameters: {latest_acc:.6f}\n"
 with open("./logs/optimization_summary.txt", "w") as f:
     f.write(f"{message}")
