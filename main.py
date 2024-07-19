@@ -10,6 +10,7 @@ from matplotlib import pyplot as plt
 from dataloader import load_MNIST
 from Network import MyNet
 from options import Options
+from single_state_tune import HillClimbScheduler
 from tune import MyScheduler, MySchedulerGA, MySchedulerGS, MySchedulerPSO
 
 # 引数の読み込み
@@ -22,6 +23,8 @@ elif opt.search_method == 'pso':
     scheduler = MySchedulerPSO(opt)
 elif opt.search_method == 'grid':
     scheduler = MySchedulerGS(opt)
+elif opt.search_method == 'hill':
+    scheduler = HillClimbScheduler(opt)
 else:
     scheduler = MyScheduler(opt)
 
