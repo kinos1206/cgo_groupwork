@@ -1,7 +1,9 @@
 import random
+from collections.abc import Sequence
+from copy import deepcopy
 from dataclasses import dataclass
 from enum import IntEnum
-from typing import Sequence, overload
+from typing import overload
 
 import pandas as pd
 
@@ -68,7 +70,7 @@ class HillClimbScheduler(MyScheduler):
             self.no_improvement_count = 0
         else:
             self.no_improvement_count += 1
-            self.param_induces = [*self.prev_param_induces]
+            self.param_induces = deepcopy(self.prev_param_induces)
 
         self.result.append(
             [
@@ -107,12 +109,16 @@ class HillClimbScheduler(MyScheduler):
             return True
 
         # 一度にすべてのパラメータを更新
+        self.prev_param_induces = deepcopy(self.param_induces)
         opt.batchSize = self.get_neighbor(self.batchSize, HyperParam.BATCH_SIZE)
         opt.epoch = self.get_neighbor(self.epoch, HyperParam.EPOCH)
         opt.lr = self.get_neighbor(self.lr, HyperParam.LR)
         opt.activation = self.get_neighbor(self.activation, HyperParam.ACTIVATION)
         opt.optimizer = self.get_neighbor(self.optimizer, HyperParam.OPTIMIZER)
-        self.prev_param_induces = [*self.param_induces]
+        print('New hyperparameters:')
+        print(
+            f'batchSize: {opt.batchSize}, epoch: {opt.epoch}, lr: {opt.lr}, activation: {opt.activation}, optimizer: {opt.optimizer}\n'
+        )
 
         return False
 
