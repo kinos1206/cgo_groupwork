@@ -9,6 +9,8 @@ from .options import TOptions
 # ランダムサーチ
 class MyScheduler:
     def __init__(self, opt: TOptions) -> None:
+        random.seed(0)  # for reproducibility
+
         self.activations = ['relu', 'sigmoid', 'hardtanh', 'softmax']
         self.optimizer_choices = ['Adam', 'SGD', 'Adagrad', 'RMSprop']
         self.sum_epoch = 0
