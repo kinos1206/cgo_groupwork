@@ -89,8 +89,9 @@ class MyScheduler:
         opt.activation = self.config[index][3]
         opt.optimizer = self.config[index][4]
         return False
-    
-class MySchedulerGA():
+
+
+class MySchedulerGA:
     def __init__(self, opt):
         self.activations = ['relu', 'sigmoid', 'hardtanh', 'softmax']
         self.optimizer_choices = ['Adam', 'SGD', 'Adagrad', 'RMSprop']
@@ -105,9 +106,9 @@ class MySchedulerGA():
         self.lr = [0.001, 0.002, 0.004, 0.01, 0.02]
         self.activation = [0, 1, 2, 3]
         self.optimizer = [0, 1, 2, 3]
-        
+
         self.population = self.initialize_population(opt)
-    
+
     def initialize_population(self, opt):
         population = []
         for _ in range(self.population_size):
@@ -116,21 +117,23 @@ class MySchedulerGA():
                 'epoch': random.choice(self.epoch),
                 'lr': random.choice(self.lr),
                 'activation': random.choice(self.activation),
-                'optimizer': random.choice(self.optimizer)
+                'optimizer': random.choice(self.optimizer),
             }
             population.append(individual)
         # Ensure the initial configuration is included
-        population.append({
-            'batchSize': opt.batchSize,
-            'epoch': opt.epoch,
-            'lr': opt.lr,
-            'activation': opt.activation,
-            'optimizer': opt.optimizer
-        })
+        population.append(
+            {
+                'batchSize': opt.batchSize,
+                'epoch': opt.epoch,
+                'lr': opt.lr,
+                'activation': opt.activation,
+                'optimizer': opt.optimizer,
+            }
+        )
         return population
 
     def evaluate_fitness(self, history):
-        return history["validation_acc"][-1]
+        return history['validation_acc'][-1]
 
     def select_parents(self):
         parents = sorted(self.population, key=lambda x: x['fitness'], reverse=True)
@@ -158,13 +161,13 @@ class MySchedulerGA():
         if self.sum_epoch + epoch >= self.limit_epoch:
             return True
         return False
-    
+
     def eval(self, epoch, history):
         if self.count_epoch(epoch):
             return True
         if epoch <= self.min_epoch:
             return False
-        if history["validation_acc"][-1] < history["validation_acc"][-2]:
+        if history['validation_acc'][-1] < history['validation_acc'][-2]:
             return True
         else:
             return False
@@ -172,11 +175,32 @@ class MySchedulerGA():
     def search(self, index, epoch, opt, history):
         self.sum_epoch += epoch
         fitness = self.evaluate_fitness(history)
-        self.result.append([opt.batchSize, opt.epoch, opt.lr, self.activations[opt.activation], self.optimizer_choices[opt.optimizer], epoch, fitness])
-        
+        self.result.append(
+            [
+                opt.batchSize,
+                opt.epoch,
+                opt.lr,
+                self.activations[opt.activation],
+                self.optimizer_choices[opt.optimizer],
+                epoch,
+                fitness,
+            ]
+        )
+
         if self.count_epoch(0):
             self.result = sorted(self.result, reverse=True, key=lambda x: x[6])
-            df = pd.DataFrame(self.result, columns=['batchSize', 'epoch', 'learning rate', 'activation', 'optimizer', 'actual epoch', 'latest accuracy'])
+            df = pd.DataFrame(
+                self.result,
+                columns=[
+                    'batchSize',
+                    'epoch',
+                    'learning rate',
+                    'activation',
+                    'optimizer',
+                    'actual epoch',
+                    'latest accuracy',
+                ],
+            )
             df.to_csv('./logs/optimize.txt', sep='\t')
             df.to_csv('./logs/optimize.csv', sep=',')
             best_individual = self.result[0]
@@ -186,7 +210,7 @@ class MySchedulerGA():
             opt.activation = self.activations.index(best_individual[3])
             opt.optimizer = self.optimizer_choices.index(best_individual[4])
             return True
-        
+
         # 現在の集団の適応度を評価
         for individual in self.population:
             individual['fitness'] = fitness
@@ -200,7 +224,7 @@ class MySchedulerGA():
             child = self.crossover(parent1, parent2)
             self.mutate(child)
             new_population.append(child)
-        
+
         self.population = new_population
 
         # 新しいハイパーパラメータをoptに設定
@@ -210,10 +234,11 @@ class MySchedulerGA():
         opt.lr = next_individual['lr']
         opt.activation = next_individual['activation']
         opt.optimizer = next_individual['optimizer']
-        
+
         return False
-        
-class MySchedulerPSO():
+
+
+class MySchedulerPSO:
     def __init__(self, opt):
         self.activations = ['relu', 'sigmoid', 'hardtanh', 'softmax']
         self.optimizer_choices = ['Adam', 'SGD', 'Adagrad', 'RMSprop']
@@ -224,7 +249,7 @@ class MySchedulerPSO():
         self.result = []
         self.c1 = 1.5  # 個体速度の学習係数
         self.c2 = 1.5  # 全体速度の学習係数
-        self.w = 0.5   # 慣性係数
+        self.w = 0.5  # 慣性係数
         self.batchSize = [16, 32, 64, 128]
         self.epoch = [10, 15, 20]
         self.lr = [0.001, 0.002, 0.004, 0.01, 0.02]
@@ -245,16 +270,18 @@ class MySchedulerPSO():
                 'epoch': random.choice(self.epoch),
                 'lr': random.choice(self.lr),
                 'activation': random.choice(self.activation),
-                'optimizer': random.choice(self.optimizer)
+                'optimizer': random.choice(self.optimizer),
             }
             population.append(individual)
-        population.append({
-            'batchSize': opt.batchSize,
-            'epoch': opt.epoch,
-            'lr': opt.lr,
-            'activation': opt.activation,
-            'optimizer': opt.optimizer
-        })
+        population.append(
+            {
+                'batchSize': opt.batchSize,
+                'epoch': opt.epoch,
+                'lr': opt.lr,
+                'activation': opt.activation,
+                'optimizer': opt.optimizer,
+            }
+        )
         return population
 
     def initialize_velocities(self):
@@ -265,42 +292,47 @@ class MySchedulerPSO():
                 'epoch': random.uniform(-1, 1),
                 'lr': random.uniform(-1, 1),
                 'activation': random.uniform(-1, 1),
-                'optimizer': random.uniform(-1, 1)
+                'optimizer': random.uniform(-1, 1),
             }
             velocities.append(velocity)
         return velocities
 
     def evaluate_fitness(self, history):
-        return history["validation_acc"][-1]
+        return history['validation_acc'][-1]
 
     def update_velocities_and_positions(self):
         for i in range(self.population_size):
             for key in self.population[i]:
                 r1, r2 = random.random(), random.random()
                 cognitive_velocity = self.c1 * r1 * (self.pbest[i][key] - self.population[i][key])
-                social_velocity = self.c2 * r2 * (self.gbest[key] - self.population[i][key])
+                if self.gbest is not None:
+                    social_velocity = self.c2 * r2 * (self.gbest[key] - self.population[i][key])
                 self.velocities[i][key] = self.w * self.velocities[i][key] + cognitive_velocity + social_velocity
                 self.population[i][key] += self.velocities[i][key]
 
                 # 値の制約 (必要に応じて調整)
                 if key in ['batchSize', 'epoch']:
-                    self.population[i][key] = int(round(max(min(self.population[i][key], max(getattr(self, key))), min(getattr(self, key)))))
+                    self.population[i][key] = int(
+                        round(max(min(self.population[i][key], max(getattr(self, key))), min(getattr(self, key))))
+                    )
                 elif key == 'lr':
                     self.population[i][key] = max(min(self.population[i][key], max(self.lr)), min(self.lr))
                 elif key in ['activation', 'optimizer']:
-                    self.population[i][key] = int(round(max(min(self.population[i][key], max(getattr(self, key))), min(getattr(self, key)))))
+                    self.population[i][key] = int(
+                        round(max(min(self.population[i][key], max(getattr(self, key))), min(getattr(self, key))))
+                    )
 
     def count_epoch(self, epoch):
         if self.sum_epoch + epoch >= self.limit_epoch:
             return True
         return False
-    
+
     def eval(self, epoch, history):
         if self.count_epoch(epoch):
             return True
         if epoch <= self.min_epoch:
             return False
-        if history["validation_acc"][-1] < history["validation_acc"][-2]:
+        if history['validation_acc'][-1] < history['validation_acc'][-2]:
             return True
         else:
             return False
@@ -308,7 +340,17 @@ class MySchedulerPSO():
     def search(self, index, epoch, opt, history):
         self.sum_epoch += epoch
         fitness = self.evaluate_fitness(history)
-        self.result.append([opt.batchSize, opt.epoch, opt.lr, self.activations[opt.activation], self.optimizer_choices[opt.optimizer], epoch, fitness])
+        self.result.append(
+            [
+                opt.batchSize,
+                opt.epoch,
+                opt.lr,
+                self.activations[opt.activation],
+                self.optimizer_choices[opt.optimizer],
+                epoch,
+                fitness,
+            ]
+        )
 
         if self.gbest is None or fitness > self.gbest_fitness:
             self.gbest = self.population[index].copy()
@@ -316,7 +358,18 @@ class MySchedulerPSO():
 
         if self.count_epoch(0):
             self.result = sorted(self.result, reverse=True, key=lambda x: x[6])
-            df = pd.DataFrame(self.result, columns=['batchSize', 'epoch', 'learning rate', 'activation', 'optimizer', 'actual epoch', 'latest accuracy'])
+            df = pd.DataFrame(
+                self.result,
+                columns=[
+                    'batchSize',
+                    'epoch',
+                    'learning rate',
+                    'activation',
+                    'optimizer',
+                    'actual epoch',
+                    'latest accuracy',
+                ],
+            )
             df.to_csv('./logs/optimize.txt', sep='\t')
             df.to_csv('./logs/optimize.csv', sep=',')
             best_individual = self.result[0]
@@ -339,7 +392,8 @@ class MySchedulerPSO():
 
         return False
 
-class MySchedulerGS():
+
+class MySchedulerGS:
     def __init__(self, opt):
         self.activations = ['relu', 'sigmoid', 'hardtanh', 'softmax']
         self.optimizer_choices = ['Adam', 'SGD', 'Adagrad', 'RMSprop']
@@ -365,17 +419,38 @@ class MySchedulerGS():
             return True
         if epoch <= self.min_epoch:
             return False
-        if history["validation_acc"][-1] < history["validation_acc"][-2]:
+        if history['validation_acc'][-1] < history['validation_acc'][-2]:
             return True
         else:
             return False
 
     def search(self, index, epoch, opt, history):
         self.sum_epoch += epoch
-        self.result.append([opt.batchSize, opt.epoch, opt.lr, self.activations[opt.activation], self.optimizer_choices[opt.optimizer], epoch, history["validation_acc"][-1]])
+        self.result.append(
+            [
+                opt.batchSize,
+                opt.epoch,
+                opt.lr,
+                self.activations[opt.activation],
+                self.optimizer_choices[opt.optimizer],
+                epoch,
+                history['validation_acc'][-1],
+            ]
+        )
         if self.count_epoch(0) or self.index >= len(self.config):
             self.result = sorted(self.result, reverse=True, key=lambda x: x[6])
-            df = pd.DataFrame(self.result, columns=['batchSize', 'epoch', 'learning rate', 'activation', 'optimizer', 'actual epoch', 'latest accuracy'])
+            df = pd.DataFrame(
+                self.result,
+                columns=[
+                    'batchSize',
+                    'epoch',
+                    'learning rate',
+                    'activation',
+                    'optimizer',
+                    'actual epoch',
+                    'latest accuracy',
+                ],
+            )
             df.to_csv('./logs/optimize.txt', sep='\t')
             df.to_csv('./logs/optimize.csv', sep=',')
             opt.batchSize = self.result[0][0]

@@ -16,6 +16,7 @@ class TOptions:
     optimizer: int
     gpu_ids: list[int]
     model_dir: str
+    search_method: str
 
 
 class Options:
@@ -33,8 +34,10 @@ class Options:
         self.parser.add_argument('--optimizer', type=int, default=0, help='input initial optimizer')
         self.parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         self.parser.add_argument('--model_dir', type=str, default='./model', help='models are saved here')
-        self.parser.add_argument('--search_method', type=str, default='random', help='search method: [random | genetic | pso | grid]')
-        
+        self.parser.add_argument(
+            '--search_method', type=str, default='random', help='search method: [random | genetic | pso | grid]'
+        )
+
         self.initialized = True
 
     def parse(self) -> TOptions:
@@ -63,6 +66,7 @@ class Options:
             optimizer=self.opt.optimizer,
             gpu_ids=self.opt.gpu_ids,
             model_dir=self.opt.model_dir,
+            search_method=self.opt.search_method,
         )
 
         args = vars(self.opt)
