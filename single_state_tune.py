@@ -88,6 +88,7 @@ class HillClimbScheduler(MyScheduler):
                 # 次のパラメータに移行
                 self.current_target = HyperParam(self.current_target + 1)
                 print(f'Change target to {self.current_target.name}')
+                self.no_improvement_count = 0
             except ValueError:
                 is_best = True
 
