@@ -15,6 +15,7 @@ from tune import MyScheduler, MySchedulerGA, MySchedulerGS, MySchedulerPSO
 
 # 引数の読み込み
 opt = Options().parse()
+dirname = f'./logs/{opt.search_method}_{time.strftime("%Y%m%d_%H%M%S")}'
 
 # ハイパーパラメータスケジューラの読み込み
 if opt.search_method == 'genetic':
@@ -25,8 +26,10 @@ elif opt.search_method == 'grid':
     scheduler = MySchedulerGS(opt)
 elif opt.search_method == 'hill':
     scheduler = HillClimbScheduler(opt)
+    scheduler.dirname = dirname
 else:
     scheduler = MyScheduler(opt)
+    scheduler.dirname = dirname
 
 # グラフの用意
 fig_loss, ax1 = plt.subplots()
@@ -41,8 +44,9 @@ ax2.set_title('Test accuracy')
 ax2.grid()
 
 # 結果保存用ディレクトリの作成
-os.makedirs('./logs', exist_ok=True)  # ディレクトリを変更
-os.makedirs('./logs/history', exist_ok=True)
+os.makedirs('./logs', exist_ok=True)
+os.makedirs(f'{dirname}', exist_ok=True)
+os.makedirs(f'{dirname}/history', exist_ok=True)
 
 loop = 1
 
@@ -129,7 +133,7 @@ while True:
 
     # 学習履歴の保存
     history_df = pd.DataFrame(history)
-    history_df.to_csv(f'./logs/history/history_{loop - 1}.csv', index=False)  # ログディレクトリに保存
+    history_df.to_csv(f'{dirname}/history/history_{loop - 1}.csv', index=False)  # ログディレクトリに保存
 
     # ハイパーパラメータの更新, 最適化を続けるか判定
     if scheduler.search(loop - 1, e + 1, opt, history):
@@ -167,13 +171,13 @@ ax2.plot(
 )
 ax1.legend()
 ax2.legend()
-fig_loss.savefig('./logs/train_loss.png')
-fig_acc.savefig('./logs/test_acc.png')
+fig_loss.savefig(f'{dirname}/train_loss.png')
+fig_acc.savefig(f'{dirname}/test_acc.png')
 
 # 結果を保存する
 message = ''
 message += f'Total epochs: {scheduler.sum_epoch}\n'
 message += f'Elapsed time (total): {elapsed_time:.2f} seconds\n'
 message += f'Elapsed time (optimization): {time_sheduler:.6f}\n'
-with open('./logs/optimization_summary.txt', 'w') as f:
+with open(f'{dirname}/optimization_summary.txt', 'w') as f:
     f.write(f'{message}')

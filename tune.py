@@ -25,6 +25,7 @@ class MyScheduler:
         self.config = list(itertools.product(self.batchSize, self.epoch, self.lr, self.activation, self.optimizer))
         self.config.remove((opt.batchSize, opt.epoch, opt.lr, opt.activation, opt.optimizer))
         random.shuffle(self.config)
+        self.dirname = "./logs"
 
     def count_epoch(self, epoch: int) -> bool:
         if self.sum_epoch + epoch >= self.limit_epoch:
