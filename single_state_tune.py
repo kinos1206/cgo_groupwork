@@ -41,12 +41,10 @@ class HillClimbScheduler(MyScheduler):
         # 最良のaccuracyが更新されなかった回数
         self.no_improvement_count = 0
         # 最良のaccuracyが更新されなかった回数の上限（終了条件）
-        self.max_no_improvement = 3
+        self.max_no_improvement = 5
         # 山登り法でのノイズの導入確率
         self.noise_probability = 1.0  # ノイズを加える確率(今回は必ずノイズを加える)
-        # 現在最適化しているパラメータ
-        self.current_target: HyperParam = HyperParam.BATCH_SIZE
-        print(f'Current target: {self.current_target.name}')
+        # 現在の設定のインデックス
         self.param_induces = [
             self.batchSize.index(opt.batchSize),
             self.epoch.index(opt.epoch),
@@ -54,6 +52,8 @@ class HillClimbScheduler(MyScheduler):
             opt.activation,
             opt.optimizer,
         ]
+        # 前回の設定のインデックス
+        self.prev_param_induces = [0, 0, 0, 0, 0]
 
     def search(self, index: int, epoch: int, opt: TOptions, history: dict) -> bool:
         self.sum_epoch += epoch
@@ -68,6 +68,7 @@ class HillClimbScheduler(MyScheduler):
             self.no_improvement_count = 0
         else:
             self.no_improvement_count += 1
+            self.param_induces = [*self.prev_param_induces]
 
         self.result.append(
             [
@@ -81,19 +82,8 @@ class HillClimbScheduler(MyScheduler):
             ]
         )
 
-        # 最良のaccuracyが更新されなかった回数が上限に達した場合
-        is_best = False
-        if self.no_improvement_count >= self.max_no_improvement:
-            try:
-                # 次のパラメータに移行
-                self.current_target = HyperParam(self.current_target + 1)
-                print(f'Change target to {self.current_target.name}')
-                self.no_improvement_count = 0
-            except ValueError:
-                is_best = True
-
         # 終了条件
-        if self.count_epoch(0) or is_best:
+        if self.count_epoch(0) or self.no_improvement_count >= self.max_no_improvement:
             self.result = sorted(self.result, reverse=True, key=lambda x: x[6])
             df = pd.DataFrame(
                 self.result,
@@ -107,8 +97,8 @@ class HillClimbScheduler(MyScheduler):
                     'latest accuracy',
                 ],
             )
-            df.to_csv('./logs/optimize.txt', sep='\t')
-            df.to_csv('./logs/optimize.csv', sep=',')
+            df.to_csv(f'{self.dirname}/optimize.txt', sep='\t')
+            df.to_csv(f'{self.dirname}/optimize.csv', sep=',')
             opt.batchSize = self.best_conf.batchSize
             opt.epoch = self.best_conf.epoch
             opt.lr = self.best_conf.lr
@@ -116,34 +106,30 @@ class HillClimbScheduler(MyScheduler):
             opt.optimizer = self.best_conf.optimizer
             return True
 
-        # 次の設定を生成
-        if self.current_target == HyperParam.BATCH_SIZE:
-            opt.batchSize = self.get_neighbor(self.batchSize)
-        elif self.current_target == HyperParam.EPOCH:
-            opt.epoch = self.get_neighbor(self.epoch)
-        elif self.current_target == HyperParam.LR:
-            opt.lr = self.get_neighbor(self.lr)
-        elif self.current_target == HyperParam.ACTIVATION:
-            opt.activation = self.get_neighbor(self.activation)
-        elif self.current_target == HyperParam.OPTIMIZER:
-            opt.optimizer = self.get_neighbor(self.optimizer)
+        # 一度にすべてのパラメータを更新
+        opt.batchSize = self.get_neighbor(self.batchSize, HyperParam.BATCH_SIZE)
+        opt.epoch = self.get_neighbor(self.epoch, HyperParam.EPOCH)
+        opt.lr = self.get_neighbor(self.lr, HyperParam.LR)
+        opt.activation = self.get_neighbor(self.activation, HyperParam.ACTIVATION)
+        opt.optimizer = self.get_neighbor(self.optimizer, HyperParam.OPTIMIZER)
+        self.prev_param_induces = [*self.param_induces]
 
         return False
 
     @overload
-    def get_neighbor(self, choices: Sequence[int]) -> int: ...
+    def get_neighbor(self, choices: Sequence[int], target_idx: int) -> int: ...
 
     @overload
-    def get_neighbor(self, choices: Sequence[float]) -> float: ...
+    def get_neighbor(self, choices: Sequence[float], target_idx: int) -> float: ...
 
-    def get_neighbor(self, choices: Sequence[int | float]) -> int | float:
+    def get_neighbor(self, choices: Sequence[int | float], target_idx: int) -> int | float:
         if random.random() < self.noise_probability:
-            current_index = self.param_induces[self.current_target]
+            current_index = self.param_induces[target_idx]
             if current_index == 0:
-                return choices[1]
+                self.param_induces[target_idx] = 1
             elif current_index == len(choices) - 1:
-                return choices[-2]
+                self.param_induces[target_idx] = len(choices) - 2
             else:
-                return random.choice([choices[current_index - 1], choices[current_index + 1]])
-        return choices[self.param_induces[self.current_target]]
+                self.param_induces[target_idx] = random.choice([current_index - 1, current_index + 1])
+        return choices[self.param_induces[target_idx]]
 
