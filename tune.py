@@ -3,11 +3,12 @@ import random
 
 import pandas as pd
 
-from .options import ParsedOptions
+from .options import TOptions
 
 
+# ランダムサーチ
 class MyScheduler:
-    def __init__(self, opt: ParsedOptions):
+    def __init__(self, opt: TOptions) -> None:
         self.activations = ['relu', 'sigmoid', 'hardtanh', 'softmax']
         self.optimizer_choices = ['Adam', 'SGD', 'Adagrad', 'RMSprop']
         self.sum_epoch = 0
@@ -23,12 +24,12 @@ class MyScheduler:
         self.config.remove((opt.batchSize, opt.epoch, opt.lr, opt.activation, opt.optimizer))
         random.shuffle(self.config)
 
-    def count_epoch(self, epoch: int):
+    def count_epoch(self, epoch: int) -> bool:
         if self.sum_epoch + epoch >= self.limit_epoch:
             return True
         return False
 
-    def eval(self, epoch: int, history: dict):
+    def eval(self, epoch: int, history: dict) -> bool:
         if self.count_epoch(epoch):
             return True
         if epoch <= self.min_epoch:
@@ -44,7 +45,7 @@ class MyScheduler:
         else:
             return False
 
-    def search(self, index: int, epoch: int, opt: ParsedOptions, history: dict):
+    def search(self, index: int, epoch: int, opt: TOptions, history: dict) -> bool:
         self.sum_epoch += epoch
         self.result.append(
             [
@@ -86,12 +87,3 @@ class MyScheduler:
         opt.activation = self.config[index][3]
         opt.optimizer = self.config[index][4]
         return False
-
-    def generate_neighbor(self, opt: ParsedOptions):
-        index = random.randint(0, len(self.config) - 1)
-        opt.batchSize = self.config[index][0]
-        opt.epoch = self.config[index][1]
-        opt.lr = self.config[index][2]
-        opt.activation = self.config[index][3]
-        opt.optimizer = self.config[index][4]
-        return opt

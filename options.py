@@ -6,7 +6,7 @@ import torch
 
 
 @dataclass
-class ParsedOptions:
+class TOptions:
     epoch_limit: int
     epoch_min: int
     batchSize: int
@@ -36,7 +36,7 @@ class Options:
 
         self.initialized = True
 
-    def parse(self) -> ParsedOptions:
+    def parse(self) -> TOptions:
         if not self.initialized:
             self.initialize()
         self.opt = self.parser.parse_args()
@@ -52,7 +52,7 @@ class Options:
         if len(self.opt.gpu_ids) > 0:
             torch.cuda.set_device(self.opt.gpu_ids[0])
 
-        parsed_opt = ParsedOptions(
+        parsed_opt = TOptions(
             epoch_limit=self.opt.epoch_limit,
             epoch_min=self.opt.epoch_min,
             batchSize=self.opt.batchSize,
