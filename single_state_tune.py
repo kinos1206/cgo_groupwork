@@ -55,7 +55,7 @@ class HillClimbScheduler(MyScheduler):
             opt.optimizer,
         ]
 
-    def search(self, epoch: int, index: int, opt: TOptions, history: dict) -> bool:
+    def search(self, index: int, epoch: int, opt: TOptions, history: dict) -> bool:
         self.sum_epoch += epoch
 
         # 現在の設定を評価
