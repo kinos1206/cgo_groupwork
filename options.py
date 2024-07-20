@@ -19,7 +19,11 @@ class TOptions:
     search_method: str
 
     def __str__(self) -> str:
-        return f'epoch_limit: {self.epoch_limit}, epoch_min: {self.epoch_min}, batchSize: {self.batchSize}, '
+        return (
+            f'epoch_limit: {self.epoch_limit}, epoch_min: {self.epoch_min}, batchSize: {self.batchSize}, '
+            f'epoch: {self.epoch}, lr: {self.lr}, activation: {self.activation}, optimizer: {self.optimizer}, '
+            f'gpu_ids: {self.gpu_ids}, model_dir: {self.model_dir}, search_method: {self.search_method}\n'
+        )
 
 
 class Options:
