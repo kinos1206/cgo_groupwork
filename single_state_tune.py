@@ -34,8 +34,8 @@ class HillClimbScheduler(MyScheduler):
         # self.batchSize = [16, 32, 64, 128]
         # self.epoch = [10, 15, 20]
         # self.lr = [0.001, 0.002, 0.004, 0.01, 0.02]
-        # self.activation = [0, 1, 2, 3]
-        # self.optimizer = [0, 1, 2, 3]
+        self.activation = [0, 2, 1, 3]
+        self.optimizer = [1, 2, 3, 0]
 
         # 最良のaccuracyとそのときの設定を保持
         self.best_conf = THyperParams(opt.batchSize, opt.epoch, opt.lr, opt.activation, opt.optimizer)
@@ -45,15 +45,19 @@ class HillClimbScheduler(MyScheduler):
         # 最良のaccuracyが更新されなかった回数の上限（終了条件）
         self.max_no_improvement = 5
         # 山登り法でのノイズの導入確率
-        self.noise_probability = 1.0  # ノイズを加える確率(今回は必ずノイズを加える)
+        self.noise_probability = 0.5  # ノイズを加える確率
         # 現在の設定のインデックス
         self.param_induces = [
             self.batchSize.index(opt.batchSize),
             self.epoch.index(opt.epoch),
             self.lr.index(opt.lr),
-            opt.activation,
-            opt.optimizer,
+            self.activation.index(opt.activation),
+            self.optimizer.index(opt.optimizer),
         ]
+        print('Hyperparameters:')
+        print(
+            f'batchSize: {opt.batchSize}, epoch: {opt.epoch}, lr: {opt.lr}, activation: {opt.activation}, optimizer: {opt.optimizer}\n'
+        )
         # 前回の設定のインデックス
         self.prev_param_induces = [0, 0, 0, 0, 0]
 
@@ -68,9 +72,11 @@ class HillClimbScheduler(MyScheduler):
             self.best_conf = current_conf
             self.best_acc = current_acc
             self.no_improvement_count = 0
+            print('improved!')
         else:
             self.no_improvement_count += 1
             self.param_induces = deepcopy(self.prev_param_induces)
+            print('not improved...')
 
         self.result.append(
             [
