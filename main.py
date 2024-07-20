@@ -15,6 +15,7 @@ from tune import MyScheduler, MySchedulerGA, MySchedulerGS, MySchedulerPSO
 
 # 引数の読み込み
 opt = Options().parse()
+initail_opt = opt
 dirname = f'./logs/{opt.search_method}_{time.strftime("%Y%m%d_%H%M%S")}'
 
 # ハイパーパラメータスケジューラの読み込み
@@ -68,6 +69,7 @@ while True:
     optimizer = eval('torch.optim.' + optimizer_choices[opt.optimizer])
     optimizer = optimizer(params=net.parameters(), lr=opt.lr)
 
+    # 推定したパラメータで学習を実行
     for e in range(opt.epoch):
         """ 学習部分 """
         loss = None
@@ -126,9 +128,13 @@ while True:
             print(f'total epoch: {scheduler.sum_epoch + e + 1}')
             # 学習を続けるか評価
             if scheduler.eval(e + 1, history):
+                print('Finish training')
                 break
 
     if loop == -1:
+        # 学習履歴の保存
+        history_df = pd.DataFrame(history)
+        history_df.to_csv(f'{dirname}/history/history_optimised.csv', index=False)  # ログディレクトリに保存
         break
 
     # 学習履歴の保存
@@ -136,11 +142,15 @@ while True:
     history_df.to_csv(f'{dirname}/history/history_{loop - 1}.csv', index=False)  # ログディレクトリに保存
 
     # ハイパーパラメータの更新, 最適化を続けるか判定
+    print('\nEvaluate hyper parameters...')
     if scheduler.search(loop - 1, e + 1, opt, history):
         end_sheduler = time.time()  # 最適化部分の時間計測の終了
+        print('-> Finish training!\n')
         print('\n--------- Train with optimised hyper parameters ---------\n')
         loop = -1
         continue
+    else:
+        print('-> Continue training with new hyper parameters\n')
 
     loop += 1
 
@@ -175,9 +185,11 @@ fig_loss.savefig(f'{dirname}/train_loss.png')
 fig_acc.savefig(f'{dirname}/test_acc.png')
 
 # 結果を保存する
-message = ''
+message = initail_opt.__str__()
 message += f'Total epochs: {scheduler.sum_epoch}\n'
 message += f'Elapsed time (total): {elapsed_time:.2f} seconds\n'
 message += f'Elapsed time (optimization): {time_sheduler:.6f}\n'
+latest_acc = history['validation_acc'][-1]
+message += f'Accuracy with optimized parameters: {latest_acc:.6f}\n'
 with open(f'{dirname}/optimization_summary.txt', 'w') as f:
     f.write(f'{message}')

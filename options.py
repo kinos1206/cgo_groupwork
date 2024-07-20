@@ -18,6 +18,9 @@ class TOptions:
     model_dir: str
     search_method: str
 
+    def __str__(self) -> str:
+        return f'epoch_limit: {self.epoch_limit}, epoch_min: {self.epoch_min}, batchSize: {self.batchSize}, '
+
 
 class Options:
     def __init__(self):
