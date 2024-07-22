@@ -10,6 +10,7 @@ import pandas as pd
 from options import TOptions
 from tune import MyScheduler
 
+
 @dataclass
 class THyperParams:
     batchSize: int
@@ -34,6 +35,8 @@ class HillClimbScheduler(MyScheduler):
         # self.batchSize = [16, 32, 64, 128]
         # self.epoch = [10, 15, 20]
         # self.lr = [0.001, 0.002, 0.004, 0.01, 0.02]
+        # self.activation = [0, 1, 2, 3]
+        # self.optimizer = [0, 1, 2, 3]
         self.activation = [0, 2, 1, 3]
         self.optimizer = [1, 2, 3, 0]
 
@@ -59,7 +62,7 @@ class HillClimbScheduler(MyScheduler):
             f'batchSize: {opt.batchSize}, epoch: {opt.epoch}, lr: {opt.lr}, activation: {opt.activation}, optimizer: {opt.optimizer}\n'
         )
         # 前回の設定のインデックス
-        self.prev_param_induces = [0, 0, 0, 0, 0]
+        self.prev_param_induces = deepcopy(self.param_induces)
 
     def search(self, index: int, epoch: int, opt: TOptions, history: dict) -> bool:
         self.sum_epoch += epoch
@@ -145,3 +148,88 @@ class HillClimbScheduler(MyScheduler):
                 self.param_induces[target_idx] = random.choice([current_index - 1, current_index + 1])
         return choices[self.param_induces[target_idx]]
 
+
+class RandomHillClimbScheduler(HillClimbScheduler):
+    def search(self, index: int, epoch: int, opt: TOptions, history: dict) -> bool:
+        self.sum_epoch += epoch
+
+        # 現在の設定を評価
+        current_acc = history['validation_acc'][-1]
+        current_conf = THyperParams(opt.batchSize, opt.epoch, opt.lr, opt.activation, opt.optimizer)
+
+        if current_acc > self.best_acc:
+            self.best_conf = current_conf
+            self.best_acc = current_acc
+            self.no_improvement_count = 0
+            print('improved!')
+        else:
+            self.no_improvement_count += 1
+            self.param_induces = deepcopy(self.prev_param_induces)
+            print('not improved...')
+
+        self.result.append(
+            [
+                opt.batchSize,
+                opt.epoch,
+                opt.lr,
+                self.activations[opt.activation],
+                self.optimizer_choices[opt.optimizer],
+                epoch,
+                current_acc,
+            ]
+        )
+
+        # 終了条件
+        if self.count_epoch(0):
+            self.result = sorted(self.result, reverse=True, key=lambda x: x[6])
+            df = pd.DataFrame(
+                self.result,
+                columns=[
+                    'batchSize',
+                    'epoch',
+                    'learning rate',
+                    'activation',
+                    'optimizer',
+                    'actual epoch',
+                    'latest accuracy',
+                ],
+            )
+            df.to_csv(f'{self.dirname}/optimize.txt', sep='\t')
+            df.to_csv(f'{self.dirname}/optimize.csv', sep=',')
+            opt.batchSize = self.best_conf.batchSize
+            opt.epoch = self.best_conf.epoch
+            opt.lr = self.best_conf.lr
+            opt.activation = self.best_conf.activation
+            opt.optimizer = self.best_conf.optimizer
+            return True
+
+        # improvementが一定回数ない場合、初期条件を変更
+        if self.no_improvement_count >= self.max_no_improvement:
+            self.no_improvement_count = 0
+            self.param_induces = [
+                random.randint(0, len(self.batchSize) - 1),
+                random.randint(0, len(self.epoch) - 1),
+                random.randint(0, len(self.lr) - 1),
+                random.randint(0, len(self.activation) - 1),
+                random.randint(0, len(self.optimizer) - 1),
+            ]
+            self.prev_param_induces = deepcopy(self.param_induces)
+            print('Reset hyperparameters:')
+            print(
+                f'batchSize: {opt.batchSize}, epoch: {opt.epoch}, lr: {opt.lr}, activation: {opt.activation}, optimizer: {opt.optimizer}\n'
+            )
+
+        else:
+            # 一度にすべてのパラメータを更新
+            self.prev_param_induces = deepcopy(self.param_induces)
+            opt.batchSize = self.get_neighbor(self.batchSize, HyperParam.BATCH_SIZE)
+            opt.epoch = self.get_neighbor(self.epoch, HyperParam.EPOCH)
+            opt.lr = self.get_neighbor(self.lr, HyperParam.LR)
+            opt.activation = self.get_neighbor(self.activation, HyperParam.ACTIVATION)
+            opt.optimizer = self.get_neighbor(self.optimizer, HyperParam.OPTIMIZER)
+            print('New hyperparameters:')
+            print(
+                f'batchSize: {opt.batchSize}, epoch: {opt.epoch}, lr: {opt.lr}, activation: {opt.activation}, optimizer: {opt.optimizer}\n'
+            )
+
+        return False
