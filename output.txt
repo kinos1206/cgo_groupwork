@@ -1,0 +1,2618 @@
+------------ Options -------------
+activation: 0
+batchSize: 64
+epoch: 20
+epoch_limit: 100
+epoch_min: 5
+gpu_ids: [9]
+lr: 0.001
+model_dir: ./model
+optimizer: 0
+search_method: hill
+-------------- End ----------------
+Hyperparameters:
+batchSize: 64, epoch: 20, lr: 0.001, activation: 0, optimizer: 0
+
+MyNet(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (dropout1): Dropout(p=0.25, inplace=False)
+  (dropout2): Dropout(p=0.5, inplace=False)
+  (fc1): Linear(in_features=9216, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+
+Train start
+Training: 1 epoch. 100 iteration. Loss:0.3556309938430786
+Training: 1 epoch. 200 iteration. Loss:0.20546391606330872
+Training: 1 epoch. 300 iteration. Loss:0.05386500060558319
+Training: 1 epoch. 400 iteration. Loss:0.32797208428382874
+Training: 1 epoch. 500 iteration. Loss:0.18638679385185242
+Training: 1 epoch. 600 iteration. Loss:0.1525929570198059
+Training: 1 epoch. 700 iteration. Loss:0.1050320416688919
+Training: 1 epoch. 800 iteration. Loss:0.020520471036434174
+Training: 1 epoch. 900 iteration. Loss:0.05828896164894104
+Training loss (ave.): 0.2003726160425796
+
+Validation start
+Validation loss: 0.04456566849946976, Accuracy: 0.9845
+
+total epoch: 1
+
+Train start
+Training: 2 epoch. 100 iteration. Loss:0.08588208258152008
+Training: 2 epoch. 200 iteration. Loss:0.03575462847948074
+Training: 2 epoch. 300 iteration. Loss:0.05056735873222351
+Training: 2 epoch. 400 iteration. Loss:0.08880651742219925
+Training: 2 epoch. 500 iteration. Loss:0.05149894207715988
+Training: 2 epoch. 600 iteration. Loss:0.038513459265232086
+Training: 2 epoch. 700 iteration. Loss:0.0951915755867958
+Training: 2 epoch. 800 iteration. Loss:0.029386457055807114
+Training: 2 epoch. 900 iteration. Loss:0.05659614875912666
+Training loss (ave.): 0.08291991650392967
+
+Validation start
+Validation loss: 0.04085721926167607, Accuracy: 0.9868
+
+total epoch: 2
+
+Train start
+Training: 3 epoch. 100 iteration. Loss:0.1484401673078537
+Training: 3 epoch. 200 iteration. Loss:0.030511189252138138
+Training: 3 epoch. 300 iteration. Loss:0.09281910210847855
+Training: 3 epoch. 400 iteration. Loss:0.020857589319348335
+Training: 3 epoch. 500 iteration. Loss:0.008792931213974953
+Training: 3 epoch. 600 iteration. Loss:0.04611753672361374
+Training: 3 epoch. 700 iteration. Loss:0.1772918701171875
+Training: 3 epoch. 800 iteration. Loss:0.10002891719341278
+Training: 3 epoch. 900 iteration. Loss:0.4672621190547943
+Training loss (ave.): 0.06463336848245779
+
+Validation start
+Validation loss: 0.03253332017021021, Accuracy: 0.9891
+
+total epoch: 3
+
+Train start
+Training: 4 epoch. 100 iteration. Loss:0.08237368613481522
+Training: 4 epoch. 200 iteration. Loss:0.12144038081169128
+Training: 4 epoch. 300 iteration. Loss:0.01799807697534561
+Training: 4 epoch. 400 iteration. Loss:0.010218197479844093
+Training: 4 epoch. 500 iteration. Loss:0.11807908862829208
+Training: 4 epoch. 600 iteration. Loss:0.06021841987967491
+Training: 4 epoch. 700 iteration. Loss:0.01415516622364521
+Training: 4 epoch. 800 iteration. Loss:0.3082476556301117
+Training: 4 epoch. 900 iteration. Loss:0.0791969746351242
+Training loss (ave.): 0.05314075835738584
+
+Validation start
+Validation loss: 0.028861210936307908, Accuracy: 0.9911
+
+total epoch: 4
+
+Train start
+Training: 5 epoch. 100 iteration. Loss:0.034432243555784225
+Training: 5 epoch. 200 iteration. Loss:0.01714121550321579
+Training: 5 epoch. 300 iteration. Loss:0.004848414566367865
+Training: 5 epoch. 400 iteration. Loss:0.02766897901892662
+Training: 5 epoch. 500 iteration. Loss:0.015023037791252136
+Training: 5 epoch. 600 iteration. Loss:0.01223684847354889
+Training: 5 epoch. 700 iteration. Loss:0.01279620174318552
+Training: 5 epoch. 800 iteration. Loss:0.0721692368388176
+Training: 5 epoch. 900 iteration. Loss:0.033619146794080734
+Training loss (ave.): 0.04687310222497603
+
+Validation start
+Validation loss: 0.033838814343977716, Accuracy: 0.9898
+
+total epoch: 5
+
+Train start
+Training: 6 epoch. 100 iteration. Loss:0.09312909841537476
+Training: 6 epoch. 200 iteration. Loss:0.005794226191937923
+Training: 6 epoch. 300 iteration. Loss:0.06951500475406647
+Training: 6 epoch. 400 iteration. Loss:0.06999081373214722
+Training: 6 epoch. 500 iteration. Loss:0.04504706710577011
+Training: 6 epoch. 600 iteration. Loss:0.041546568274497986
+Training: 6 epoch. 700 iteration. Loss:0.00961303897202015
+Training: 6 epoch. 800 iteration. Loss:0.07616891711950302
+Training: 6 epoch. 900 iteration. Loss:0.012093345634639263
+Training loss (ave.): 0.03746071497284892
+
+Validation start
+Validation loss: 0.03002834397694096, Accuracy: 0.9906
+
+total epoch: 6
+
+Train start
+Training: 7 epoch. 100 iteration. Loss:0.013111677020788193
+Training: 7 epoch. 200 iteration. Loss:0.011513175442814827
+Training: 7 epoch. 300 iteration. Loss:0.015498262830078602
+Training: 7 epoch. 400 iteration. Loss:0.023245390504598618
+Training: 7 epoch. 500 iteration. Loss:0.007308569736778736
+Training: 7 epoch. 600 iteration. Loss:0.009172288700938225
+Training: 7 epoch. 700 iteration. Loss:0.026890097185969353
+Training: 7 epoch. 800 iteration. Loss:0.0044838073663413525
+Training: 7 epoch. 900 iteration. Loss:0.001229112851433456
+Training loss (ave.): 0.035818118919138865
+
+Validation start
+Validation loss: 0.027697331295593177, Accuracy: 0.9916
+
+total epoch: 7
+
+Train start
+Training: 8 epoch. 100 iteration. Loss:0.05967586115002632
+Training: 8 epoch. 200 iteration. Loss:0.03449724242091179
+Training: 8 epoch. 300 iteration. Loss:0.03888886421918869
+Training: 8 epoch. 400 iteration. Loss:0.030509186908602715
+Training: 8 epoch. 500 iteration. Loss:0.013570878654718399
+Training: 8 epoch. 600 iteration. Loss:0.07531197369098663
+Training: 8 epoch. 700 iteration. Loss:0.010212689638137817
+Training: 8 epoch. 800 iteration. Loss:0.009343203157186508
+Training: 8 epoch. 900 iteration. Loss:0.06523513793945312
+Training loss (ave.): 0.03255431604453612
+
+Validation start
+Validation loss: 0.0273774078539107, Accuracy: 0.9918
+
+total epoch: 8
+
+Train start
+Training: 9 epoch. 100 iteration. Loss:0.04479631036520004
+Training: 9 epoch. 200 iteration. Loss:0.031055986881256104
+Training: 9 epoch. 300 iteration. Loss:0.021446319296956062
+Training: 9 epoch. 400 iteration. Loss:0.09511009603738785
+Training: 9 epoch. 500 iteration. Loss:0.1179920956492424
+Training: 9 epoch. 600 iteration. Loss:0.051326051354408264
+Training: 9 epoch. 700 iteration. Loss:0.00467890128493309
+Training: 9 epoch. 800 iteration. Loss:0.020101191475987434
+Training: 9 epoch. 900 iteration. Loss:0.025285543873906136
+Training loss (ave.): 0.02804122258093519
+
+Validation start
+Validation loss: 0.02961343294340145, Accuracy: 0.9911
+
+total epoch: 9
+Finish training
+
+Evaluate hyper parameters...
+improved!
+New hyperparameters:
+batchSize: 64, epoch: 15, lr: 0.001, activation: 1, optimizer: 1
+
+-> Continue training with new hyper parameters
+
+MyNet(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (dropout1): Dropout(p=0.25, inplace=False)
+  (dropout2): Dropout(p=0.5, inplace=False)
+  (fc1): Linear(in_features=9216, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+
+Train start
+Training: 1 epoch. 100 iteration. Loss:2.4121062755584717
+Training: 1 epoch. 200 iteration. Loss:2.3316452503204346
+Training: 1 epoch. 300 iteration. Loss:2.3585329055786133
+Training: 1 epoch. 400 iteration. Loss:2.3583781719207764
+Training: 1 epoch. 500 iteration. Loss:2.3512115478515625
+Training: 1 epoch. 600 iteration. Loss:2.310743570327759
+Training: 1 epoch. 700 iteration. Loss:2.327404260635376
+Training: 1 epoch. 800 iteration. Loss:2.323781728744507
+Training: 1 epoch. 900 iteration. Loss:2.3114657402038574
+Training loss (ave.): 2.329623376891049
+
+Validation start
+Validation loss: 2.2999840427398683, Accuracy: 0.1135
+
+total epoch: 10
+
+Train start
+Training: 2 epoch. 100 iteration. Loss:2.3578011989593506
+Training: 2 epoch. 200 iteration. Loss:2.3439040184020996
+Training: 2 epoch. 300 iteration. Loss:2.337144136428833
+Training: 2 epoch. 400 iteration. Loss:2.2673428058624268
+Training: 2 epoch. 500 iteration. Loss:2.3347439765930176
+Training: 2 epoch. 600 iteration. Loss:2.3421475887298584
+Training: 2 epoch. 700 iteration. Loss:2.3271780014038086
+Training: 2 epoch. 800 iteration. Loss:2.290971517562866
+Training: 2 epoch. 900 iteration. Loss:2.2992711067199707
+Training loss (ave.): 2.3140184342988266
+
+Validation start
+Validation loss: 2.299345294189453, Accuracy: 0.1135
+
+total epoch: 11
+
+Train start
+Training: 3 epoch. 100 iteration. Loss:2.3291797637939453
+Training: 3 epoch. 200 iteration. Loss:2.299417734146118
+Training: 3 epoch. 300 iteration. Loss:2.309110641479492
+Training: 3 epoch. 400 iteration. Loss:2.311185121536255
+Training: 3 epoch. 500 iteration. Loss:2.308337926864624
+Training: 3 epoch. 600 iteration. Loss:2.2911834716796875
+Training: 3 epoch. 700 iteration. Loss:2.310823440551758
+Training: 3 epoch. 800 iteration. Loss:2.3212103843688965
+Training: 3 epoch. 900 iteration. Loss:2.3086676597595215
+Training loss (ave.): 2.3081876461439803
+
+Validation start
+Validation loss: 2.2989440208435057, Accuracy: 0.1135
+
+total epoch: 12
+
+Train start
+Training: 4 epoch. 100 iteration. Loss:2.3493690490722656
+Training: 4 epoch. 200 iteration. Loss:2.3053574562072754
+Training: 4 epoch. 300 iteration. Loss:2.29272723197937
+Training: 4 epoch. 400 iteration. Loss:2.3003859519958496
+Training: 4 epoch. 500 iteration. Loss:2.302178144454956
+Training: 4 epoch. 600 iteration. Loss:2.316574811935425
+Training: 4 epoch. 700 iteration. Loss:2.317972421646118
+Training: 4 epoch. 800 iteration. Loss:2.342923879623413
+Training: 4 epoch. 900 iteration. Loss:2.2989251613616943
+Training loss (ave.): 2.306058452073445
+
+Validation start
+Validation loss: 2.2985874977111815, Accuracy: 0.1135
+
+total epoch: 13
+
+Train start
+Training: 5 epoch. 100 iteration. Loss:2.2972700595855713
+Training: 5 epoch. 200 iteration. Loss:2.3101840019226074
+Training: 5 epoch. 300 iteration. Loss:2.285444974899292
+Training: 5 epoch. 400 iteration. Loss:2.312835693359375
+Training: 5 epoch. 500 iteration. Loss:2.2999138832092285
+Training: 5 epoch. 600 iteration. Loss:2.2989604473114014
+Training: 5 epoch. 700 iteration. Loss:2.3050003051757812
+Training: 5 epoch. 800 iteration. Loss:2.3130195140838623
+Training: 5 epoch. 900 iteration. Loss:2.290210008621216
+Training loss (ave.): 2.3037841541172344
+
+Validation start
+Validation loss: 2.2983076560974123, Accuracy: 0.1135
+
+total epoch: 14
+
+Train start
+Training: 6 epoch. 100 iteration. Loss:2.309788942337036
+Training: 6 epoch. 200 iteration. Loss:2.287337303161621
+Training: 6 epoch. 300 iteration. Loss:2.308126211166382
+Training: 6 epoch. 400 iteration. Loss:2.2885279655456543
+Training: 6 epoch. 500 iteration. Loss:2.318579912185669
+Training: 6 epoch. 600 iteration. Loss:2.290895700454712
+Training: 6 epoch. 700 iteration. Loss:2.30741548538208
+Training: 6 epoch. 800 iteration. Loss:2.3231077194213867
+Training: 6 epoch. 900 iteration. Loss:2.3026723861694336
+Training loss (ave.): 2.3025927668187154
+
+Validation start
+Validation loss: 2.2981439975738525, Accuracy: 0.1135
+
+total epoch: 15
+
+Train start
+Training: 7 epoch. 100 iteration. Loss:2.309128522872925
+Training: 7 epoch. 200 iteration. Loss:2.303515672683716
+Training: 7 epoch. 300 iteration. Loss:2.312516927719116
+Training: 7 epoch. 400 iteration. Loss:2.305149555206299
+Training: 7 epoch. 500 iteration. Loss:2.3035106658935547
+Training: 7 epoch. 600 iteration. Loss:2.312528133392334
+Training: 7 epoch. 700 iteration. Loss:2.275448799133301
+Training: 7 epoch. 800 iteration. Loss:2.305175542831421
+Training: 7 epoch. 900 iteration. Loss:2.304837226867676
+Training loss (ave.): 2.3022180861755728
+
+Validation start
+Validation loss: 2.2979240653991697, Accuracy: 0.1135
+
+total epoch: 16
+
+Train start
+Training: 8 epoch. 100 iteration. Loss:2.292854070663452
+Training: 8 epoch. 200 iteration. Loss:2.3120570182800293
+Training: 8 epoch. 300 iteration. Loss:2.302088975906372
+Training: 8 epoch. 400 iteration. Loss:2.326359748840332
+Training: 8 epoch. 500 iteration. Loss:2.296124219894409
+Training: 8 epoch. 600 iteration. Loss:2.306668519973755
+Training: 8 epoch. 700 iteration. Loss:2.284086227416992
+Training: 8 epoch. 800 iteration. Loss:2.292539358139038
+Training: 8 epoch. 900 iteration. Loss:2.3038320541381836
+Training loss (ave.): 2.3019006793687082
+
+Validation start
+Validation loss: 2.297677545928955, Accuracy: 0.1135
+
+total epoch: 17
+
+Train start
+Training: 9 epoch. 100 iteration. Loss:2.305556535720825
+Training: 9 epoch. 200 iteration. Loss:2.300879716873169
+Training: 9 epoch. 300 iteration. Loss:2.2985329627990723
+Training: 9 epoch. 400 iteration. Loss:2.2852048873901367
+Training: 9 epoch. 500 iteration. Loss:2.3201701641082764
+Training: 9 epoch. 600 iteration. Loss:2.2899627685546875
+Training: 9 epoch. 700 iteration. Loss:2.3153207302093506
+Training: 9 epoch. 800 iteration. Loss:2.29250431060791
+Training: 9 epoch. 900 iteration. Loss:2.3159120082855225
+Training loss (ave.): 2.300743075576164
+
+Validation start
+Validation loss: 2.2975064697265624, Accuracy: 0.1135
+
+total epoch: 18
+
+Train start
+Training: 10 epoch. 100 iteration. Loss:2.314099073410034
+Training: 10 epoch. 200 iteration. Loss:2.3101139068603516
+Training: 10 epoch. 300 iteration. Loss:2.31339168548584
+Training: 10 epoch. 400 iteration. Loss:2.319894552230835
+Training: 10 epoch. 500 iteration. Loss:2.3022055625915527
+Training: 10 epoch. 600 iteration. Loss:2.292900323867798
+Training: 10 epoch. 700 iteration. Loss:2.310208797454834
+Training: 10 epoch. 800 iteration. Loss:2.3005354404449463
+Training: 10 epoch. 900 iteration. Loss:2.3206238746643066
+Training loss (ave.): 2.3000527467808998
+
+Validation start
+Validation loss: 2.2971269031524657, Accuracy: 0.1135
+
+total epoch: 19
+
+Train start
+Training: 11 epoch. 100 iteration. Loss:2.3039677143096924
+Training: 11 epoch. 200 iteration. Loss:2.297415256500244
+Training: 11 epoch. 300 iteration. Loss:2.2916407585144043
+Training: 11 epoch. 400 iteration. Loss:2.2985098361968994
+Training: 11 epoch. 500 iteration. Loss:2.305216073989868
+Training: 11 epoch. 600 iteration. Loss:2.2925283908843994
+Training: 11 epoch. 700 iteration. Loss:2.307267904281616
+Training: 11 epoch. 800 iteration. Loss:2.277362108230591
+Training: 11 epoch. 900 iteration. Loss:2.2901148796081543
+Training loss (ave.): 2.300404484592267
+
+Validation start
+Validation loss: 2.2968815536499023, Accuracy: 0.1135
+
+total epoch: 20
+
+Train start
+Training: 12 epoch. 100 iteration. Loss:2.2846925258636475
+Training: 12 epoch. 200 iteration. Loss:2.2951457500457764
+Training: 12 epoch. 300 iteration. Loss:2.315371036529541
+Training: 12 epoch. 400 iteration. Loss:2.2953736782073975
+Training: 12 epoch. 500 iteration. Loss:2.2897047996520996
+Training: 12 epoch. 600 iteration. Loss:2.2843523025512695
+Training: 12 epoch. 700 iteration. Loss:2.309058666229248
+Training: 12 epoch. 800 iteration. Loss:2.283946990966797
+Training: 12 epoch. 900 iteration. Loss:2.313164710998535
+Training loss (ave.): 2.2992228005232334
+
+Validation start
+Validation loss: 2.296528591537476, Accuracy: 0.1135
+
+total epoch: 21
+
+Train start
+Training: 13 epoch. 100 iteration. Loss:2.3206064701080322
+Training: 13 epoch. 200 iteration. Loss:2.2915053367614746
+Training: 13 epoch. 300 iteration. Loss:2.301042079925537
+Training: 13 epoch. 400 iteration. Loss:2.302994728088379
+Training: 13 epoch. 500 iteration. Loss:2.278498649597168
+Training: 13 epoch. 600 iteration. Loss:2.2982256412506104
+Training: 13 epoch. 700 iteration. Loss:2.2742905616760254
+Training: 13 epoch. 800 iteration. Loss:2.314023017883301
+Training: 13 epoch. 900 iteration. Loss:2.3089404106140137
+Training loss (ave.): 2.298880002900227
+
+Validation start
+Validation loss: 2.2961368602752685, Accuracy: 0.1135
+
+total epoch: 22
+
+Train start
+Training: 14 epoch. 100 iteration. Loss:2.275542736053467
+Training: 14 epoch. 200 iteration. Loss:2.2960805892944336
+Training: 14 epoch. 300 iteration. Loss:2.322017192840576
+Training: 14 epoch. 400 iteration. Loss:2.298311233520508
+Training: 14 epoch. 500 iteration. Loss:2.2955543994903564
+Training: 14 epoch. 600 iteration. Loss:2.313255548477173
+Training: 14 epoch. 700 iteration. Loss:2.300194501876831
+Training: 14 epoch. 800 iteration. Loss:2.305231809616089
+Training: 14 epoch. 900 iteration. Loss:2.305187940597534
+Training loss (ave.): 2.2983527714763876
+
+Validation start
+Validation loss: 2.2956528175354003, Accuracy: 0.1135
+
+total epoch: 23
+
+Train start
+Training: 15 epoch. 100 iteration. Loss:2.2934083938598633
+Training: 15 epoch. 200 iteration. Loss:2.3009181022644043
+Training: 15 epoch. 300 iteration. Loss:2.2870709896087646
+Training: 15 epoch. 400 iteration. Loss:2.2786927223205566
+Training: 15 epoch. 500 iteration. Loss:2.2945351600646973
+Training: 15 epoch. 600 iteration. Loss:2.2934556007385254
+Training: 15 epoch. 700 iteration. Loss:2.2778208255767822
+Training: 15 epoch. 800 iteration. Loss:2.311603546142578
+Training: 15 epoch. 900 iteration. Loss:2.2795867919921875
+Training loss (ave.): 2.298309655077676
+
+Validation start
+Validation loss: 2.2951457515716553, Accuracy: 0.1135
+
+total epoch: 24
+
+Evaluate hyper parameters...
+not improved...
+New hyperparameters:
+batchSize: 128, epoch: 15, lr: 0.002, activation: 0, optimizer: 0
+
+-> Continue training with new hyper parameters
+
+MyNet(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (dropout1): Dropout(p=0.25, inplace=False)
+  (dropout2): Dropout(p=0.5, inplace=False)
+  (fc1): Linear(in_features=9216, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+
+Train start
+Training: 1 epoch. 100 iteration. Loss:0.1616787314414978
+Training: 1 epoch. 200 iteration. Loss:0.16056597232818604
+Training: 1 epoch. 300 iteration. Loss:0.07412693649530411
+Training: 1 epoch. 400 iteration. Loss:0.08590944856405258
+Training loss (ave.): 0.20323835150884795
+
+Validation start
+Validation loss: 0.04915583704710007, Accuracy: 0.9828
+
+total epoch: 25
+
+Train start
+Training: 2 epoch. 100 iteration. Loss:0.09647484123706818
+Training: 2 epoch. 200 iteration. Loss:0.05144361034035683
+Training: 2 epoch. 300 iteration. Loss:0.07599196583032608
+Training: 2 epoch. 400 iteration. Loss:0.028785718604922295
+Training loss (ave.): 0.08055411209699823
+
+Validation start
+Validation loss: 0.03637482290565967, Accuracy: 0.9888
+
+total epoch: 26
+
+Train start
+Training: 3 epoch. 100 iteration. Loss:0.028276190161705017
+Training: 3 epoch. 200 iteration. Loss:0.041276901960372925
+Training: 3 epoch. 300 iteration. Loss:0.0884372889995575
+Training: 3 epoch. 400 iteration. Loss:0.021702703088521957
+Training loss (ave.): 0.06181397555129869
+
+Validation start
+Validation loss: 0.03306019577085972, Accuracy: 0.9891
+
+total epoch: 27
+
+Train start
+Training: 4 epoch. 100 iteration. Loss:0.04744637757539749
+Training: 4 epoch. 200 iteration. Loss:0.02827269770205021
+Training: 4 epoch. 300 iteration. Loss:0.06333302706480026
+Training: 4 epoch. 400 iteration. Loss:0.019331123679876328
+Training loss (ave.): 0.050324306584028866
+
+Validation start
+Validation loss: 0.03078305856026709, Accuracy: 0.9911
+
+total epoch: 28
+
+Train start
+Training: 5 epoch. 100 iteration. Loss:0.03380897641181946
+Training: 5 epoch. 200 iteration. Loss:0.0328051894903183
+Training: 5 epoch. 300 iteration. Loss:0.0367114394903183
+Training: 5 epoch. 400 iteration. Loss:0.007345764897763729
+Training loss (ave.): 0.04640686603164725
+
+Validation start
+Validation loss: 0.032465611474541946, Accuracy: 0.9905
+
+total epoch: 29
+
+Train start
+Training: 6 epoch. 100 iteration. Loss:0.039989277720451355
+Training: 6 epoch. 200 iteration. Loss:0.022539416328072548
+Training: 6 epoch. 300 iteration. Loss:0.05117538571357727
+Training: 6 epoch. 400 iteration. Loss:0.026524905115365982
+Training loss (ave.): 0.03778914495362346
+
+Validation start
+Validation loss: 0.029671945945126937, Accuracy: 0.9911
+
+total epoch: 30
+
+Train start
+Training: 7 epoch. 100 iteration. Loss:0.059571217745542526
+Training: 7 epoch. 200 iteration. Loss:0.0381600521504879
+Training: 7 epoch. 300 iteration. Loss:0.024046296253800392
+Training: 7 epoch. 400 iteration. Loss:0.03938928246498108
+Training loss (ave.): 0.035980408069869275
+
+Validation start
+Validation loss: 0.03641228407549206, Accuracy: 0.9896
+
+total epoch: 31
+Finish training
+
+Evaluate hyper parameters...
+not improved...
+New hyperparameters:
+batchSize: 32, epoch: 20, lr: 0.002, activation: 0, optimizer: 1
+
+-> Continue training with new hyper parameters
+
+MyNet(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (dropout1): Dropout(p=0.25, inplace=False)
+  (dropout2): Dropout(p=0.5, inplace=False)
+  (fc1): Linear(in_features=9216, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+
+Train start
+Training: 1 epoch. 100 iteration. Loss:2.186184883117676
+Training: 1 epoch. 200 iteration. Loss:1.8401360511779785
+Training: 1 epoch. 300 iteration. Loss:1.4862138032913208
+Training: 1 epoch. 400 iteration. Loss:0.8291158676147461
+Training: 1 epoch. 500 iteration. Loss:0.7406118512153625
+Training: 1 epoch. 600 iteration. Loss:0.5936674475669861
+Training: 1 epoch. 700 iteration. Loss:0.6868714094161987
+Training: 1 epoch. 800 iteration. Loss:0.5663546323776245
+Training: 1 epoch. 900 iteration. Loss:0.5386359691619873
+Training: 1 epoch. 1000 iteration. Loss:0.6949079036712646
+Training: 1 epoch. 1100 iteration. Loss:0.5985887050628662
+Training: 1 epoch. 1200 iteration. Loss:0.5252609252929688
+Training: 1 epoch. 1300 iteration. Loss:0.30228638648986816
+Training: 1 epoch. 1400 iteration. Loss:0.23548753559589386
+Training: 1 epoch. 1500 iteration. Loss:0.6427412629127502
+Training: 1 epoch. 1600 iteration. Loss:0.29623720049858093
+Training: 1 epoch. 1700 iteration. Loss:0.38352060317993164
+Training: 1 epoch. 1800 iteration. Loss:0.25096702575683594
+Training loss (ave.): 0.8129342620015144
+
+Validation start
+Validation loss: 0.2828053876876831, Accuracy: 0.9213
+
+total epoch: 32
+
+Train start
+Training: 2 epoch. 100 iteration. Loss:0.28256601095199585
+Training: 2 epoch. 200 iteration. Loss:0.33427903056144714
+Training: 2 epoch. 300 iteration. Loss:0.4494311511516571
+Training: 2 epoch. 400 iteration. Loss:0.20560979843139648
+Training: 2 epoch. 500 iteration. Loss:0.6862759590148926
+Training: 2 epoch. 600 iteration. Loss:0.46424487233161926
+Training: 2 epoch. 700 iteration. Loss:0.27592596411705017
+Training: 2 epoch. 800 iteration. Loss:0.276388943195343
+Training: 2 epoch. 900 iteration. Loss:0.4018343985080719
+Training: 2 epoch. 1000 iteration. Loss:0.1735514998435974
+Training: 2 epoch. 1100 iteration. Loss:0.3206564486026764
+Training: 2 epoch. 1200 iteration. Loss:0.297563374042511
+Training: 2 epoch. 1300 iteration. Loss:0.11573315411806107
+Training: 2 epoch. 1400 iteration. Loss:0.38459455966949463
+Training: 2 epoch. 1500 iteration. Loss:0.3216738700866699
+Training: 2 epoch. 1600 iteration. Loss:0.3523702025413513
+Training: 2 epoch. 1700 iteration. Loss:0.25816550850868225
+Training: 2 epoch. 1800 iteration. Loss:0.17623655498027802
+Training loss (ave.): 0.3540630334575971
+
+Validation start
+Validation loss: 0.19806351308226586, Accuracy: 0.9412
+
+total epoch: 33
+
+Train start
+Training: 3 epoch. 100 iteration. Loss:0.22999811172485352
+Training: 3 epoch. 200 iteration. Loss:0.10771530866622925
+Training: 3 epoch. 300 iteration. Loss:0.2056921422481537
+Training: 3 epoch. 400 iteration. Loss:0.20984861254692078
+Training: 3 epoch. 500 iteration. Loss:0.2198573350906372
+Training: 3 epoch. 600 iteration. Loss:0.2218524068593979
+Training: 3 epoch. 700 iteration. Loss:0.295733779668808
+Training: 3 epoch. 800 iteration. Loss:0.5219119787216187
+Training: 3 epoch. 900 iteration. Loss:0.15596087276935577
+Training: 3 epoch. 1000 iteration. Loss:0.43002697825431824
+Training: 3 epoch. 1100 iteration. Loss:0.14393088221549988
+Training: 3 epoch. 1200 iteration. Loss:0.24269187450408936
+Training: 3 epoch. 1300 iteration. Loss:0.2597866356372833
+Training: 3 epoch. 1400 iteration. Loss:0.3034704625606537
+Training: 3 epoch. 1500 iteration. Loss:0.1850138157606125
+Training: 3 epoch. 1600 iteration. Loss:0.2944362461566925
+Training: 3 epoch. 1700 iteration. Loss:0.3331378102302551
+Training: 3 epoch. 1800 iteration. Loss:0.28096628189086914
+Training loss (ave.): 0.28938944786190984
+
+Validation start
+Validation loss: 0.15790713827610015, Accuracy: 0.953
+
+total epoch: 34
+
+Train start
+Training: 4 epoch. 100 iteration. Loss:0.35704347491264343
+Training: 4 epoch. 200 iteration. Loss:0.3682410418987274
+Training: 4 epoch. 300 iteration. Loss:0.20236052572727203
+Training: 4 epoch. 400 iteration. Loss:0.15088829398155212
+Training: 4 epoch. 500 iteration. Loss:0.19435715675354004
+Training: 4 epoch. 600 iteration. Loss:0.2727460265159607
+Training: 4 epoch. 700 iteration. Loss:0.16532891988754272
+Training: 4 epoch. 800 iteration. Loss:0.14858217537403107
+Training: 4 epoch. 900 iteration. Loss:0.337297648191452
+Training: 4 epoch. 1000 iteration. Loss:0.18765172362327576
+Training: 4 epoch. 1100 iteration. Loss:0.2214180827140808
+Training: 4 epoch. 1200 iteration. Loss:0.360571026802063
+Training: 4 epoch. 1300 iteration. Loss:0.11769220232963562
+Training: 4 epoch. 1400 iteration. Loss:0.14925655722618103
+Training: 4 epoch. 1500 iteration. Loss:0.06045321375131607
+Training: 4 epoch. 1600 iteration. Loss:0.22004693746566772
+Training: 4 epoch. 1700 iteration. Loss:0.17843542993068695
+Training: 4 epoch. 1800 iteration. Loss:0.09727996587753296
+Training loss (ave.): 0.24639197946190833
+
+Validation start
+Validation loss: 0.1310803370833397, Accuracy: 0.9616
+
+total epoch: 35
+
+Train start
+Training: 5 epoch. 100 iteration. Loss:0.19839444756507874
+Training: 5 epoch. 200 iteration. Loss:0.14777258038520813
+Training: 5 epoch. 300 iteration. Loss:0.05179017782211304
+Training: 5 epoch. 400 iteration. Loss:0.19867394864559174
+Training: 5 epoch. 500 iteration. Loss:0.3223363161087036
+Training: 5 epoch. 600 iteration. Loss:0.4657078981399536
+Training: 5 epoch. 700 iteration. Loss:0.13082128763198853
+Training: 5 epoch. 800 iteration. Loss:0.2041204571723938
+Training: 5 epoch. 900 iteration. Loss:0.2792365550994873
+Training: 5 epoch. 1000 iteration. Loss:0.10815984755754471
+Training: 5 epoch. 1100 iteration. Loss:0.05697229877114296
+Training: 5 epoch. 1200 iteration. Loss:0.1072511076927185
+Training: 5 epoch. 1300 iteration. Loss:0.28781694173812866
+Training: 5 epoch. 1400 iteration. Loss:0.3430722653865814
+Training: 5 epoch. 1500 iteration. Loss:0.11408594250679016
+Training: 5 epoch. 1600 iteration. Loss:0.351443350315094
+Training: 5 epoch. 1700 iteration. Loss:0.06418939679861069
+Training: 5 epoch. 1800 iteration. Loss:0.0868731290102005
+Training loss (ave.): 0.21634687647521497
+
+Validation start
+Validation loss: 0.11445358973741532, Accuracy: 0.967
+
+total epoch: 36
+
+Train start
+Training: 6 epoch. 100 iteration. Loss:0.21977499127388
+Training: 6 epoch. 200 iteration. Loss:0.32930460572242737
+Training: 6 epoch. 300 iteration. Loss:0.1578591912984848
+Training: 6 epoch. 400 iteration. Loss:0.19809983670711517
+Training: 6 epoch. 500 iteration. Loss:0.16809090971946716
+Training: 6 epoch. 600 iteration. Loss:0.9979391694068909
+Training: 6 epoch. 700 iteration. Loss:0.10150826722383499
+Training: 6 epoch. 800 iteration. Loss:0.3926025331020355
+Training: 6 epoch. 900 iteration. Loss:0.11925509572029114
+Training: 6 epoch. 1000 iteration. Loss:0.07666148245334625
+Training: 6 epoch. 1100 iteration. Loss:0.31287992000579834
+Training: 6 epoch. 1200 iteration. Loss:0.25993067026138306
+Training: 6 epoch. 1300 iteration. Loss:0.14003987610340118
+Training: 6 epoch. 1400 iteration. Loss:0.3325929641723633
+Training: 6 epoch. 1500 iteration. Loss:0.18901096284389496
+Training: 6 epoch. 1600 iteration. Loss:0.35864871740341187
+Training: 6 epoch. 1700 iteration. Loss:0.15091736614704132
+Training: 6 epoch. 1800 iteration. Loss:0.1890881359577179
+Training loss (ave.): 0.19694392840266228
+
+Validation start
+Validation loss: 0.10076865993589162, Accuracy: 0.9693
+
+total epoch: 37
+
+Train start
+Training: 7 epoch. 100 iteration. Loss:0.27327483892440796
+Training: 7 epoch. 200 iteration. Loss:0.3547995388507843
+Training: 7 epoch. 300 iteration. Loss:0.03245088830590248
+Training: 7 epoch. 400 iteration. Loss:0.38824307918548584
+Training: 7 epoch. 500 iteration. Loss:0.08120140433311462
+Training: 7 epoch. 600 iteration. Loss:0.20398986339569092
+Training: 7 epoch. 700 iteration. Loss:0.11693716794252396
+Training: 7 epoch. 800 iteration. Loss:0.16933269798755646
+Training: 7 epoch. 900 iteration. Loss:0.10204349458217621
+Training: 7 epoch. 1000 iteration. Loss:0.32948601245880127
+Training: 7 epoch. 1100 iteration. Loss:0.1692546308040619
+Training: 7 epoch. 1200 iteration. Loss:0.06198406219482422
+Training: 7 epoch. 1300 iteration. Loss:0.18079976737499237
+Training: 7 epoch. 1400 iteration. Loss:0.16403420269489288
+Training: 7 epoch. 1500 iteration. Loss:0.1357194036245346
+Training: 7 epoch. 1600 iteration. Loss:0.11689934879541397
+Training: 7 epoch. 1700 iteration. Loss:0.09786301106214523
+Training: 7 epoch. 1800 iteration. Loss:0.21850532293319702
+Training loss (ave.): 0.17809277839958668
+
+Validation start
+Validation loss: 0.08980699504762887, Accuracy: 0.9731
+
+total epoch: 38
+
+Train start
+Training: 8 epoch. 100 iteration. Loss:0.14748866856098175
+Training: 8 epoch. 200 iteration. Loss:0.02575269713997841
+Training: 8 epoch. 300 iteration. Loss:0.15207912027835846
+Training: 8 epoch. 400 iteration. Loss:0.07463952898979187
+Training: 8 epoch. 500 iteration. Loss:0.2657186686992645
+Training: 8 epoch. 600 iteration. Loss:0.033905453979969025
+Training: 8 epoch. 700 iteration. Loss:0.19708704948425293
+Training: 8 epoch. 800 iteration. Loss:0.17012421786785126
+Training: 8 epoch. 900 iteration. Loss:0.165447399020195
+Training: 8 epoch. 1000 iteration. Loss:0.06186235323548317
+Training: 8 epoch. 1100 iteration. Loss:0.14405985176563263
+Training: 8 epoch. 1200 iteration. Loss:0.039973556995391846
+Training: 8 epoch. 1300 iteration. Loss:0.15194988250732422
+Training: 8 epoch. 1400 iteration. Loss:0.09910684078931808
+Training: 8 epoch. 1500 iteration. Loss:0.13505958020687103
+Training: 8 epoch. 1600 iteration. Loss:0.24051113426685333
+Training: 8 epoch. 1700 iteration. Loss:0.08485163748264313
+Training: 8 epoch. 1800 iteration. Loss:0.057825639843940735
+Training loss (ave.): 0.1595074729586641
+
+Validation start
+Validation loss: 0.08089199294522405, Accuracy: 0.9752
+
+total epoch: 39
+
+Train start
+Training: 9 epoch. 100 iteration. Loss:0.25996777415275574
+Training: 9 epoch. 200 iteration. Loss:0.06844434887170792
+Training: 9 epoch. 300 iteration. Loss:0.2167593389749527
+Training: 9 epoch. 400 iteration. Loss:0.37170401215553284
+Training: 9 epoch. 500 iteration. Loss:0.1326741725206375
+Training: 9 epoch. 600 iteration. Loss:0.06361585855484009
+Training: 9 epoch. 700 iteration. Loss:0.11264600604772568
+Training: 9 epoch. 800 iteration. Loss:0.3525296449661255
+Training: 9 epoch. 900 iteration. Loss:0.02230149507522583
+Training: 9 epoch. 1000 iteration. Loss:0.11993750184774399
+Training: 9 epoch. 1100 iteration. Loss:0.08575434237718582
+Training: 9 epoch. 1200 iteration. Loss:0.3325202763080597
+Training: 9 epoch. 1300 iteration. Loss:0.06096767261624336
+Training: 9 epoch. 1400 iteration. Loss:0.22424831986427307
+Training: 9 epoch. 1500 iteration. Loss:0.11407966166734695
+Training: 9 epoch. 1600 iteration. Loss:0.1358502209186554
+Training: 9 epoch. 1700 iteration. Loss:0.04154163971543312
+Training: 9 epoch. 1800 iteration. Loss:0.08154633641242981
+Training loss (ave.): 0.14670340208113195
+
+Validation start
+Validation loss: 0.07566794545650482, Accuracy: 0.977
+
+total epoch: 40
+
+Train start
+Training: 10 epoch. 100 iteration. Loss:0.07389547675848007
+Training: 10 epoch. 200 iteration. Loss:0.06412163376808167
+Training: 10 epoch. 300 iteration. Loss:0.035268109291791916
+Training: 10 epoch. 400 iteration. Loss:0.05726950243115425
+Training: 10 epoch. 500 iteration. Loss:0.07011347264051437
+Training: 10 epoch. 600 iteration. Loss:0.304487407207489
+Training: 10 epoch. 700 iteration. Loss:0.17931292951107025
+Training: 10 epoch. 800 iteration. Loss:0.2340473234653473
+Training: 10 epoch. 900 iteration. Loss:0.13127471506595612
+Training: 10 epoch. 1000 iteration. Loss:0.08900580555200577
+Training: 10 epoch. 1100 iteration. Loss:0.06738777458667755
+Training: 10 epoch. 1200 iteration. Loss:0.029067387804389
+Training: 10 epoch. 1300 iteration. Loss:0.15108993649482727
+Training: 10 epoch. 1400 iteration. Loss:0.10094412416219711
+Training: 10 epoch. 1500 iteration. Loss:0.2862733006477356
+Training: 10 epoch. 1600 iteration. Loss:0.027886994183063507
+Training: 10 epoch. 1700 iteration. Loss:0.10496580600738525
+Training: 10 epoch. 1800 iteration. Loss:0.2896507680416107
+Training loss (ave.): 0.13508025759235023
+
+Validation start
+Validation loss: 0.06863296988010406, Accuracy: 0.9785
+
+total epoch: 41
+
+Train start
+Training: 11 epoch. 100 iteration. Loss:0.05212342366576195
+Training: 11 epoch. 200 iteration. Loss:0.22735759615898132
+Training: 11 epoch. 300 iteration. Loss:0.17724038660526276
+Training: 11 epoch. 400 iteration. Loss:0.14035522937774658
+Training: 11 epoch. 500 iteration. Loss:0.1797306388616562
+Training: 11 epoch. 600 iteration. Loss:0.029203511774539948
+Training: 11 epoch. 700 iteration. Loss:0.10487396270036697
+Training: 11 epoch. 800 iteration. Loss:0.18997818231582642
+Training: 11 epoch. 900 iteration. Loss:0.14897561073303223
+Training: 11 epoch. 1000 iteration. Loss:0.27157649397850037
+Training: 11 epoch. 1100 iteration. Loss:0.1548442542552948
+Training: 11 epoch. 1200 iteration. Loss:0.09855416417121887
+Training: 11 epoch. 1300 iteration. Loss:0.09000441431999207
+Training: 11 epoch. 1400 iteration. Loss:0.2030879706144333
+Training: 11 epoch. 1500 iteration. Loss:0.29267728328704834
+Training: 11 epoch. 1600 iteration. Loss:0.1134309321641922
+Training: 11 epoch. 1700 iteration. Loss:0.13664323091506958
+Training: 11 epoch. 1800 iteration. Loss:0.061946772038936615
+Training loss (ave.): 0.1276641611856719
+
+Validation start
+Validation loss: 0.06437534180395305, Accuracy: 0.9793
+
+total epoch: 42
+
+Train start
+Training: 12 epoch. 100 iteration. Loss:0.41376975178718567
+Training: 12 epoch. 200 iteration. Loss:0.2960619330406189
+Training: 12 epoch. 300 iteration. Loss:0.007493422366678715
+Training: 12 epoch. 400 iteration. Loss:0.03809002414345741
+Training: 12 epoch. 500 iteration. Loss:0.04317707568407059
+Training: 12 epoch. 600 iteration. Loss:0.09981262683868408
+Training: 12 epoch. 700 iteration. Loss:0.23823609948158264
+Training: 12 epoch. 800 iteration. Loss:0.060110192745923996
+Training: 12 epoch. 900 iteration. Loss:0.025778884068131447
+Training: 12 epoch. 1000 iteration. Loss:0.09589017927646637
+Training: 12 epoch. 1100 iteration. Loss:0.1867983639240265
+Training: 12 epoch. 1200 iteration. Loss:0.2528829872608185
+Training: 12 epoch. 1300 iteration. Loss:0.1891431361436844
+Training: 12 epoch. 1400 iteration. Loss:0.08261186629533768
+Training: 12 epoch. 1500 iteration. Loss:0.14650483429431915
+Training: 12 epoch. 1600 iteration. Loss:0.07312220335006714
+Training: 12 epoch. 1700 iteration. Loss:0.12624195218086243
+Training: 12 epoch. 1800 iteration. Loss:0.05457255244255066
+Training loss (ave.): 0.11618292975450556
+
+Validation start
+Validation loss: 0.06201489966288209, Accuracy: 0.9811
+
+total epoch: 43
+
+Train start
+Training: 13 epoch. 100 iteration. Loss:0.1240452229976654
+Training: 13 epoch. 200 iteration. Loss:0.08777396380901337
+Training: 13 epoch. 300 iteration. Loss:0.22094891965389252
+Training: 13 epoch. 400 iteration. Loss:0.029012620449066162
+Training: 13 epoch. 500 iteration. Loss:0.5543811917304993
+Training: 13 epoch. 600 iteration. Loss:0.0299210324883461
+Training: 13 epoch. 700 iteration. Loss:0.15431560575962067
+Training: 13 epoch. 800 iteration. Loss:0.19135943055152893
+Training: 13 epoch. 900 iteration. Loss:0.39841634035110474
+Training: 13 epoch. 1000 iteration. Loss:0.05315626412630081
+Training: 13 epoch. 1100 iteration. Loss:0.17135943472385406
+Training: 13 epoch. 1200 iteration. Loss:0.1635609120130539
+Training: 13 epoch. 1300 iteration. Loss:0.05722186341881752
+Training: 13 epoch. 1400 iteration. Loss:0.07769399136304855
+Training: 13 epoch. 1500 iteration. Loss:0.06441447883844376
+Training: 13 epoch. 1600 iteration. Loss:0.09278323501348495
+Training: 13 epoch. 1700 iteration. Loss:0.10595851391553879
+Training: 13 epoch. 1800 iteration. Loss:0.016772517934441566
+Training loss (ave.): 0.11378023055518667
+
+Validation start
+Validation loss: 0.057888500787317755, Accuracy: 0.9815
+
+total epoch: 44
+
+Train start
+Training: 14 epoch. 100 iteration. Loss:0.02291913703083992
+Training: 14 epoch. 200 iteration. Loss:0.1625184565782547
+Training: 14 epoch. 300 iteration. Loss:0.01767999678850174
+Training: 14 epoch. 400 iteration. Loss:0.05368838086724281
+Training: 14 epoch. 500 iteration. Loss:0.08696694672107697
+Training: 14 epoch. 600 iteration. Loss:0.12586377561092377
+Training: 14 epoch. 700 iteration. Loss:0.006651017814874649
+Training: 14 epoch. 800 iteration. Loss:0.030962593853473663
+Training: 14 epoch. 900 iteration. Loss:0.08390442281961441
+Training: 14 epoch. 1000 iteration. Loss:0.06789512187242508
+Training: 14 epoch. 1100 iteration. Loss:0.149794802069664
+Training: 14 epoch. 1200 iteration. Loss:0.1236565038561821
+Training: 14 epoch. 1300 iteration. Loss:0.09367205947637558
+Training: 14 epoch. 1400 iteration. Loss:0.4097974896430969
+Training: 14 epoch. 1500 iteration. Loss:0.03691761940717697
+Training: 14 epoch. 1600 iteration. Loss:0.04086998105049133
+Training: 14 epoch. 1700 iteration. Loss:0.06827136129140854
+Training: 14 epoch. 1800 iteration. Loss:0.19818326830863953
+Training loss (ave.): 0.10585699461326004
+
+Validation start
+Validation loss: 0.053960582623630765, Accuracy: 0.9831
+
+total epoch: 45
+
+Train start
+Training: 15 epoch. 100 iteration. Loss:0.10158414393663406
+Training: 15 epoch. 200 iteration. Loss:0.09779122471809387
+Training: 15 epoch. 300 iteration. Loss:0.04947321116924286
+Training: 15 epoch. 400 iteration. Loss:0.2500990927219391
+Training: 15 epoch. 500 iteration. Loss:0.08929383009672165
+Training: 15 epoch. 600 iteration. Loss:0.0799650177359581
+Training: 15 epoch. 700 iteration. Loss:0.03687046840786934
+Training: 15 epoch. 800 iteration. Loss:0.32420751452445984
+Training: 15 epoch. 900 iteration. Loss:0.07132025063037872
+Training: 15 epoch. 1000 iteration. Loss:0.2398236095905304
+Training: 15 epoch. 1100 iteration. Loss:0.10889407247304916
+Training: 15 epoch. 1200 iteration. Loss:0.028080271556973457
+Training: 15 epoch. 1300 iteration. Loss:0.007646145299077034
+Training: 15 epoch. 1400 iteration. Loss:0.03861546516418457
+Training: 15 epoch. 1500 iteration. Loss:0.3162880539894104
+Training: 15 epoch. 1600 iteration. Loss:0.042635228484869
+Training: 15 epoch. 1700 iteration. Loss:0.03733045980334282
+Training: 15 epoch. 1800 iteration. Loss:0.04201623797416687
+Training loss (ave.): 0.10074589770560463
+
+Validation start
+Validation loss: 0.05230242228358984, Accuracy: 0.9826
+
+total epoch: 46
+Finish training
+
+Evaluate hyper parameters...
+not improved...
+New hyperparameters:
+batchSize: 64, epoch: 15, lr: 0.001, activation: 1, optimizer: 1
+
+-> Continue training with new hyper parameters
+
+MyNet(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (dropout1): Dropout(p=0.25, inplace=False)
+  (dropout2): Dropout(p=0.5, inplace=False)
+  (fc1): Linear(in_features=9216, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+
+Train start
+Training: 1 epoch. 100 iteration. Loss:2.3891117572784424
+Training: 1 epoch. 200 iteration. Loss:2.364553928375244
+Training: 1 epoch. 300 iteration. Loss:2.345200300216675
+Training: 1 epoch. 400 iteration. Loss:2.3092989921569824
+Training: 1 epoch. 500 iteration. Loss:2.330214023590088
+Training: 1 epoch. 600 iteration. Loss:2.308912754058838
+Training: 1 epoch. 700 iteration. Loss:2.3178958892822266
+Training: 1 epoch. 800 iteration. Loss:2.22650146484375
+Training: 1 epoch. 900 iteration. Loss:2.36264705657959
+Training loss (ave.): 2.3309247872468504
+
+Validation start
+Validation loss: 2.3008658992767335, Accuracy: 0.1135
+
+total epoch: 47
+
+Train start
+Training: 2 epoch. 100 iteration. Loss:2.3419132232666016
+Training: 2 epoch. 200 iteration. Loss:2.3236148357391357
+Training: 2 epoch. 300 iteration. Loss:2.357523202896118
+Training: 2 epoch. 400 iteration. Loss:2.359301805496216
+Training: 2 epoch. 500 iteration. Loss:2.3167173862457275
+Training: 2 epoch. 600 iteration. Loss:2.3088560104370117
+Training: 2 epoch. 700 iteration. Loss:2.3219192028045654
+Training: 2 epoch. 800 iteration. Loss:2.332007884979248
+Training: 2 epoch. 900 iteration. Loss:2.298252820968628
+Training loss (ave.): 2.317191149634339
+
+Validation start
+Validation loss: 2.3002095222473145, Accuracy: 0.1135
+
+total epoch: 48
+
+Train start
+Training: 3 epoch. 100 iteration. Loss:2.343900680541992
+Training: 3 epoch. 200 iteration. Loss:2.3266685009002686
+Training: 3 epoch. 300 iteration. Loss:2.261492967605591
+Training: 3 epoch. 400 iteration. Loss:2.3132123947143555
+Training: 3 epoch. 500 iteration. Loss:2.3108794689178467
+Training: 3 epoch. 600 iteration. Loss:2.3390276432037354
+Training: 3 epoch. 700 iteration. Loss:2.28617000579834
+Training: 3 epoch. 800 iteration. Loss:2.3184492588043213
+Training: 3 epoch. 900 iteration. Loss:2.301750421524048
+Training loss (ave.): 2.3108940002506477
+
+Validation start
+Validation loss: 2.3000302730560302, Accuracy: 0.1135
+
+total epoch: 49
+
+Train start
+Training: 4 epoch. 100 iteration. Loss:2.3216943740844727
+Training: 4 epoch. 200 iteration. Loss:2.310872793197632
+Training: 4 epoch. 300 iteration. Loss:2.2902944087982178
+Training: 4 epoch. 400 iteration. Loss:2.3175485134124756
+Training: 4 epoch. 500 iteration. Loss:2.31363582611084
+Training: 4 epoch. 600 iteration. Loss:2.2696731090545654
+Training: 4 epoch. 700 iteration. Loss:2.311314105987549
+Training: 4 epoch. 800 iteration. Loss:2.3096859455108643
+Training: 4 epoch. 900 iteration. Loss:2.2751352787017822
+Training loss (ave.): 2.3070085155430125
+
+Validation start
+Validation loss: 2.299709545135498, Accuracy: 0.1135
+
+total epoch: 50
+
+Train start
+Training: 5 epoch. 100 iteration. Loss:2.316891670227051
+Training: 5 epoch. 200 iteration. Loss:2.3032538890838623
+Training: 5 epoch. 300 iteration. Loss:2.3218443393707275
+Training: 5 epoch. 400 iteration. Loss:2.304841995239258
+Training: 5 epoch. 500 iteration. Loss:2.3234877586364746
+Training: 5 epoch. 600 iteration. Loss:2.2901837825775146
+Training: 5 epoch. 700 iteration. Loss:2.297255277633667
+Training: 5 epoch. 800 iteration. Loss:2.327925682067871
+Training: 5 epoch. 900 iteration. Loss:2.323709011077881
+Training loss (ave.): 2.3053347085838887
+
+Validation start
+Validation loss: 2.299585474014282, Accuracy: 0.1135
+
+total epoch: 51
+
+Train start
+Training: 6 epoch. 100 iteration. Loss:2.2909162044525146
+Training: 6 epoch. 200 iteration. Loss:2.274266481399536
+Training: 6 epoch. 300 iteration. Loss:2.3174045085906982
+Training: 6 epoch. 400 iteration. Loss:2.3232316970825195
+Training: 6 epoch. 500 iteration. Loss:2.32879638671875
+Training: 6 epoch. 600 iteration. Loss:2.31982684135437
+Training: 6 epoch. 700 iteration. Loss:2.298335075378418
+Training: 6 epoch. 800 iteration. Loss:2.297246217727661
+Training: 6 epoch. 900 iteration. Loss:2.312296152114868
+Training loss (ave.): 2.30485335443574
+
+Validation start
+Validation loss: 2.2994870475769043, Accuracy: 0.1135
+
+total epoch: 52
+
+Train start
+Training: 7 epoch. 100 iteration. Loss:2.3011438846588135
+Training: 7 epoch. 200 iteration. Loss:2.2970008850097656
+Training: 7 epoch. 300 iteration. Loss:2.298201560974121
+Training: 7 epoch. 400 iteration. Loss:2.283480167388916
+Training: 7 epoch. 500 iteration. Loss:2.2974853515625
+Training: 7 epoch. 600 iteration. Loss:2.2967398166656494
+Training: 7 epoch. 700 iteration. Loss:2.3123438358306885
+Training: 7 epoch. 800 iteration. Loss:2.308485269546509
+Training: 7 epoch. 900 iteration. Loss:2.3012261390686035
+Training loss (ave.): 2.303267109368656
+
+Validation start
+Validation loss: 2.299282755279541, Accuracy: 0.1135
+
+total epoch: 53
+
+Train start
+Training: 8 epoch. 100 iteration. Loss:2.276569128036499
+Training: 8 epoch. 200 iteration. Loss:2.311365842819214
+Training: 8 epoch. 300 iteration. Loss:2.307274580001831
+Training: 8 epoch. 400 iteration. Loss:2.3012664318084717
+Training: 8 epoch. 500 iteration. Loss:2.3089542388916016
+Training: 8 epoch. 600 iteration. Loss:2.285254955291748
+Training: 8 epoch. 700 iteration. Loss:2.3066883087158203
+Training: 8 epoch. 800 iteration. Loss:2.2900390625
+Training: 8 epoch. 900 iteration. Loss:2.2995035648345947
+Training loss (ave.): 2.302519354484737
+
+Validation start
+Validation loss: 2.299196171951294, Accuracy: 0.1135
+
+total epoch: 54
+
+Train start
+Training: 9 epoch. 100 iteration. Loss:2.2979416847229004
+Training: 9 epoch. 200 iteration. Loss:2.3161580562591553
+Training: 9 epoch. 300 iteration. Loss:2.2833032608032227
+Training: 9 epoch. 400 iteration. Loss:2.300278663635254
+Training: 9 epoch. 500 iteration. Loss:2.2948496341705322
+Training: 9 epoch. 600 iteration. Loss:2.2895898818969727
+Training: 9 epoch. 700 iteration. Loss:2.3016278743743896
+Training: 9 epoch. 800 iteration. Loss:2.2936270236968994
+Training: 9 epoch. 900 iteration. Loss:2.2751049995422363
+Training loss (ave.): 2.302204908338437
+
+Validation start
+Validation loss: 2.299086043930054, Accuracy: 0.1135
+
+total epoch: 55
+
+Train start
+Training: 10 epoch. 100 iteration. Loss:2.3032333850860596
+Training: 10 epoch. 200 iteration. Loss:2.3187637329101562
+Training: 10 epoch. 300 iteration. Loss:2.3040990829467773
+Training: 10 epoch. 400 iteration. Loss:2.3177037239074707
+Training: 10 epoch. 500 iteration. Loss:2.3067944049835205
+Training: 10 epoch. 600 iteration. Loss:2.2964351177215576
+Training: 10 epoch. 700 iteration. Loss:2.3245017528533936
+Training: 10 epoch. 800 iteration. Loss:2.2863876819610596
+Training: 10 epoch. 900 iteration. Loss:2.302833318710327
+Training loss (ave.): 2.301852046045413
+
+Validation start
+Validation loss: 2.2989867832183837, Accuracy: 0.1135
+
+total epoch: 56
+
+Train start
+Training: 11 epoch. 100 iteration. Loss:2.2997424602508545
+Training: 11 epoch. 200 iteration. Loss:2.2979283332824707
+Training: 11 epoch. 300 iteration. Loss:2.305858612060547
+Training: 11 epoch. 400 iteration. Loss:2.3170089721679688
+Training: 11 epoch. 500 iteration. Loss:2.3266355991363525
+Training: 11 epoch. 600 iteration. Loss:2.308145523071289
+Training: 11 epoch. 700 iteration. Loss:2.3074536323547363
+Training: 11 epoch. 800 iteration. Loss:2.302635431289673
+Training: 11 epoch. 900 iteration. Loss:2.298091173171997
+Training loss (ave.): 2.301528863561179
+
+Validation start
+Validation loss: 2.2988771858215333, Accuracy: 0.1135
+
+total epoch: 57
+
+Train start
+Training: 12 epoch. 100 iteration. Loss:2.296372413635254
+Training: 12 epoch. 200 iteration. Loss:2.3056836128234863
+Training: 12 epoch. 300 iteration. Loss:2.3074452877044678
+Training: 12 epoch. 400 iteration. Loss:2.3042140007019043
+Training: 12 epoch. 500 iteration. Loss:2.291633129119873
+Training: 12 epoch. 600 iteration. Loss:2.292011022567749
+Training: 12 epoch. 700 iteration. Loss:2.2982606887817383
+Training: 12 epoch. 800 iteration. Loss:2.300204277038574
+Training: 12 epoch. 900 iteration. Loss:2.316013813018799
+Training loss (ave.): 2.3007088739480546
+
+Validation start
+Validation loss: 2.2987258880615236, Accuracy: 0.1135
+
+total epoch: 58
+
+Train start
+Training: 13 epoch. 100 iteration. Loss:2.309121608734131
+Training: 13 epoch. 200 iteration. Loss:2.3005101680755615
+Training: 13 epoch. 300 iteration. Loss:2.3200159072875977
+Training: 13 epoch. 400 iteration. Loss:2.3024377822875977
+Training: 13 epoch. 500 iteration. Loss:2.3018550872802734
+Training: 13 epoch. 600 iteration. Loss:2.297144651412964
+Training: 13 epoch. 700 iteration. Loss:2.2966949939727783
+Training: 13 epoch. 800 iteration. Loss:2.310944080352783
+Training: 13 epoch. 900 iteration. Loss:2.3021416664123535
+Training loss (ave.): 2.3006941753663996
+
+Validation start
+Validation loss: 2.298547206115723, Accuracy: 0.1135
+
+total epoch: 59
+
+Train start
+Training: 14 epoch. 100 iteration. Loss:2.29365611076355
+Training: 14 epoch. 200 iteration. Loss:2.292304039001465
+Training: 14 epoch. 300 iteration. Loss:2.3130130767822266
+Training: 14 epoch. 400 iteration. Loss:2.305791139602661
+Training: 14 epoch. 500 iteration. Loss:2.292152166366577
+Training: 14 epoch. 600 iteration. Loss:2.29172420501709
+Training: 14 epoch. 700 iteration. Loss:2.3059444427490234
+Training: 14 epoch. 800 iteration. Loss:2.284269094467163
+Training: 14 epoch. 900 iteration. Loss:2.305344581604004
+Training loss (ave.): 2.300786708463738
+
+Validation start
+Validation loss: 2.2984154857635497, Accuracy: 0.1135
+
+total epoch: 60
+
+Train start
+Training: 15 epoch. 100 iteration. Loss:2.2988712787628174
+Training: 15 epoch. 200 iteration. Loss:2.2903497219085693
+Training: 15 epoch. 300 iteration. Loss:2.297874689102173
+Training: 15 epoch. 400 iteration. Loss:2.316309928894043
+Training: 15 epoch. 500 iteration. Loss:2.2887091636657715
+Training: 15 epoch. 600 iteration. Loss:2.2878944873809814
+Training: 15 epoch. 700 iteration. Loss:2.2979352474212646
+Training: 15 epoch. 800 iteration. Loss:2.3050854206085205
+Training: 15 epoch. 900 iteration. Loss:2.2868123054504395
+Training loss (ave.): 2.300553034109347
+
+Validation start
+Validation loss: 2.2983124156951904, Accuracy: 0.1135
+
+total epoch: 61
+
+Evaluate hyper parameters...
+not improved...
+New hyperparameters:
+batchSize: 32, epoch: 20, lr: 0.002, activation: 1, optimizer: 1
+
+-> Continue training with new hyper parameters
+
+MyNet(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (dropout1): Dropout(p=0.25, inplace=False)
+  (dropout2): Dropout(p=0.5, inplace=False)
+  (fc1): Linear(in_features=9216, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+
+Train start
+Training: 1 epoch. 100 iteration. Loss:2.318675994873047
+Training: 1 epoch. 200 iteration. Loss:2.2995834350585938
+Training: 1 epoch. 300 iteration. Loss:2.313918352127075
+Training: 1 epoch. 400 iteration. Loss:2.2744712829589844
+Training: 1 epoch. 500 iteration. Loss:2.2864530086517334
+Training: 1 epoch. 600 iteration. Loss:2.318232774734497
+Training: 1 epoch. 700 iteration. Loss:2.28411602973938
+Training: 1 epoch. 800 iteration. Loss:2.30778431892395
+Training: 1 epoch. 900 iteration. Loss:2.299466371536255
+Training: 1 epoch. 1000 iteration. Loss:2.2807180881500244
+Training: 1 epoch. 1100 iteration. Loss:2.308354616165161
+Training: 1 epoch. 1200 iteration. Loss:2.328803777694702
+Training: 1 epoch. 1300 iteration. Loss:2.3159677982330322
+Training: 1 epoch. 1400 iteration. Loss:2.338228464126587
+Training: 1 epoch. 1500 iteration. Loss:2.314189910888672
+Training: 1 epoch. 1600 iteration. Loss:2.3345770835876465
+Training: 1 epoch. 1700 iteration. Loss:2.3168842792510986
+Training: 1 epoch. 1800 iteration. Loss:2.3184409141540527
+Training loss (ave.): 2.3158963845570883
+
+Validation start
+Validation loss: 2.2982134479522704, Accuracy: 0.1135
+
+total epoch: 62
+
+Train start
+Training: 2 epoch. 100 iteration. Loss:2.2821669578552246
+Training: 2 epoch. 200 iteration. Loss:2.2851288318634033
+Training: 2 epoch. 300 iteration. Loss:2.2739739418029785
+Training: 2 epoch. 400 iteration. Loss:2.297485589981079
+Training: 2 epoch. 500 iteration. Loss:2.3187968730926514
+Training: 2 epoch. 600 iteration. Loss:2.2945070266723633
+Training: 2 epoch. 700 iteration. Loss:2.2995564937591553
+Training: 2 epoch. 800 iteration. Loss:2.3231842517852783
+Training: 2 epoch. 900 iteration. Loss:2.285339832305908
+Training: 2 epoch. 1000 iteration. Loss:2.3086040019989014
+Training: 2 epoch. 1100 iteration. Loss:2.2805306911468506
+Training: 2 epoch. 1200 iteration. Loss:2.2949414253234863
+Training: 2 epoch. 1300 iteration. Loss:2.269239902496338
+Training: 2 epoch. 1400 iteration. Loss:2.297609567642212
+Training: 2 epoch. 1500 iteration. Loss:2.289107084274292
+Training: 2 epoch. 1600 iteration. Loss:2.2997610569000244
+Training: 2 epoch. 1700 iteration. Loss:2.3154664039611816
+Training: 2 epoch. 1800 iteration. Loss:2.3048019409179688
+Training loss (ave.): 2.301386540857951
+
+Validation start
+Validation loss: 2.2958786544799805, Accuracy: 0.1135
+
+total epoch: 63
+
+Train start
+Training: 3 epoch. 100 iteration. Loss:2.2957468032836914
+Training: 3 epoch. 200 iteration. Loss:2.3001463413238525
+Training: 3 epoch. 300 iteration. Loss:2.3093459606170654
+Training: 3 epoch. 400 iteration. Loss:2.3022897243499756
+Training: 3 epoch. 500 iteration. Loss:2.2959439754486084
+Training: 3 epoch. 600 iteration. Loss:2.309004068374634
+Training: 3 epoch. 700 iteration. Loss:2.28287410736084
+Training: 3 epoch. 800 iteration. Loss:2.291801929473877
+Training: 3 epoch. 900 iteration. Loss:2.299736738204956
+Training: 3 epoch. 1000 iteration. Loss:2.285737991333008
+Training: 3 epoch. 1100 iteration. Loss:2.286447048187256
+Training: 3 epoch. 1200 iteration. Loss:2.324805974960327
+Training: 3 epoch. 1300 iteration. Loss:2.2636168003082275
+Training: 3 epoch. 1400 iteration. Loss:2.303436279296875
+Training: 3 epoch. 1500 iteration. Loss:2.2851970195770264
+Training: 3 epoch. 1600 iteration. Loss:2.3223800659179688
+Training: 3 epoch. 1700 iteration. Loss:2.276660442352295
+Training: 3 epoch. 1800 iteration. Loss:2.3257946968078613
+Training loss (ave.): 2.298100397109985
+
+Validation start
+Validation loss: 2.2931009658813477, Accuracy: 0.1135
+
+total epoch: 64
+
+Train start
+Training: 4 epoch. 100 iteration. Loss:2.290776252746582
+Training: 4 epoch. 200 iteration. Loss:2.295689105987549
+Training: 4 epoch. 300 iteration. Loss:2.3046658039093018
+Training: 4 epoch. 400 iteration. Loss:2.2848446369171143
+Training: 4 epoch. 500 iteration. Loss:2.2957282066345215
+Training: 4 epoch. 600 iteration. Loss:2.3128104209899902
+Training: 4 epoch. 700 iteration. Loss:2.3265726566314697
+Training: 4 epoch. 800 iteration. Loss:2.291287422180176
+Training: 4 epoch. 900 iteration. Loss:2.3045501708984375
+Training: 4 epoch. 1000 iteration. Loss:2.2874197959899902
+Training: 4 epoch. 1100 iteration. Loss:2.2713353633880615
+Training: 4 epoch. 1200 iteration. Loss:2.327298164367676
+Training: 4 epoch. 1300 iteration. Loss:2.2964401245117188
+Training: 4 epoch. 1400 iteration. Loss:2.278444528579712
+Training: 4 epoch. 1500 iteration. Loss:2.303964376449585
+Training: 4 epoch. 1600 iteration. Loss:2.2605092525482178
+Training: 4 epoch. 1700 iteration. Loss:2.3102052211761475
+Training: 4 epoch. 1800 iteration. Loss:2.2966363430023193
+Training loss (ave.): 2.294311725743612
+
+Validation start
+Validation loss: 2.288043967056274, Accuracy: 0.1135
+
+total epoch: 65
+
+Train start
+Training: 5 epoch. 100 iteration. Loss:2.315765619277954
+Training: 5 epoch. 200 iteration. Loss:2.2970056533813477
+Training: 5 epoch. 300 iteration. Loss:2.293421745300293
+Training: 5 epoch. 400 iteration. Loss:2.264359474182129
+Training: 5 epoch. 500 iteration. Loss:2.2971062660217285
+Training: 5 epoch. 600 iteration. Loss:2.291499614715576
+Training: 5 epoch. 700 iteration. Loss:2.3044614791870117
+Training: 5 epoch. 800 iteration. Loss:2.3090431690216064
+Training: 5 epoch. 900 iteration. Loss:2.281358242034912
+Training: 5 epoch. 1000 iteration. Loss:2.304262638092041
+Training: 5 epoch. 1100 iteration. Loss:2.264589548110962
+Training: 5 epoch. 1200 iteration. Loss:2.2744600772857666
+Training: 5 epoch. 1300 iteration. Loss:2.3019423484802246
+Training: 5 epoch. 1400 iteration. Loss:2.2671899795532227
+Training: 5 epoch. 1500 iteration. Loss:2.3242998123168945
+Training: 5 epoch. 1600 iteration. Loss:2.2928836345672607
+Training: 5 epoch. 1700 iteration. Loss:2.2840397357940674
+Training: 5 epoch. 1800 iteration. Loss:2.3006644248962402
+Training loss (ave.): 2.287777556355794
+
+Validation start
+Validation loss: 2.2751803314208985, Accuracy: 0.1184
+
+total epoch: 66
+
+Train start
+Training: 6 epoch. 100 iteration. Loss:2.2392773628234863
+Training: 6 epoch. 200 iteration. Loss:2.3314225673675537
+Training: 6 epoch. 300 iteration. Loss:2.281010627746582
+Training: 6 epoch. 400 iteration. Loss:2.3400750160217285
+Training: 6 epoch. 500 iteration. Loss:2.259446382522583
+Training: 6 epoch. 600 iteration. Loss:2.2637109756469727
+Training: 6 epoch. 700 iteration. Loss:2.2722229957580566
+Training: 6 epoch. 800 iteration. Loss:2.2999765872955322
+Training: 6 epoch. 900 iteration. Loss:2.283102035522461
+Training: 6 epoch. 1000 iteration. Loss:2.2907328605651855
+Training: 6 epoch. 1100 iteration. Loss:2.290679454803467
+Training: 6 epoch. 1200 iteration. Loss:2.3131113052368164
+Training: 6 epoch. 1300 iteration. Loss:2.3097639083862305
+Training: 6 epoch. 1400 iteration. Loss:2.2776596546173096
+Training: 6 epoch. 1500 iteration. Loss:2.272534132003784
+Training: 6 epoch. 1600 iteration. Loss:2.283618927001953
+Training: 6 epoch. 1700 iteration. Loss:2.274487018585205
+Training: 6 epoch. 1800 iteration. Loss:2.2335994243621826
+Training loss (ave.): 2.2707723869323733
+
+Validation start
+Validation loss: 2.2411018672943115, Accuracy: 0.2981
+
+total epoch: 67
+
+Train start
+Training: 7 epoch. 100 iteration. Loss:2.27697491645813
+Training: 7 epoch. 200 iteration. Loss:2.225785255432129
+Training: 7 epoch. 300 iteration. Loss:2.290710926055908
+Training: 7 epoch. 400 iteration. Loss:2.1921122074127197
+Training: 7 epoch. 500 iteration. Loss:2.219197988510132
+Training: 7 epoch. 600 iteration. Loss:2.1672329902648926
+Training: 7 epoch. 700 iteration. Loss:2.2437937259674072
+Training: 7 epoch. 800 iteration. Loss:2.185265064239502
+Training: 7 epoch. 900 iteration. Loss:2.2217257022857666
+Training: 7 epoch. 1000 iteration. Loss:2.2063827514648438
+Training: 7 epoch. 1100 iteration. Loss:2.1986992359161377
+Training: 7 epoch. 1200 iteration. Loss:2.169281005859375
+Training: 7 epoch. 1300 iteration. Loss:2.281937599182129
+Training: 7 epoch. 1400 iteration. Loss:2.124080181121826
+Training: 7 epoch. 1500 iteration. Loss:2.1334590911865234
+Training: 7 epoch. 1600 iteration. Loss:2.2778608798980713
+Training: 7 epoch. 1700 iteration. Loss:2.203218936920166
+Training: 7 epoch. 1800 iteration. Loss:2.172314405441284
+Training loss (ave.): 2.2157825777689615
+
+Validation start
+Validation loss: 2.1264573909759523, Accuracy: 0.4233
+
+total epoch: 68
+
+Train start
+Training: 8 epoch. 100 iteration. Loss:2.194329023361206
+Training: 8 epoch. 200 iteration. Loss:2.129246234893799
+Training: 8 epoch. 300 iteration. Loss:2.0775935649871826
+Training: 8 epoch. 400 iteration. Loss:2.1555771827697754
+Training: 8 epoch. 500 iteration. Loss:2.1447997093200684
+Training: 8 epoch. 600 iteration. Loss:2.1075234413146973
+Training: 8 epoch. 700 iteration. Loss:2.113673210144043
+Training: 8 epoch. 800 iteration. Loss:2.0958878993988037
+Training: 8 epoch. 900 iteration. Loss:1.9627342224121094
+Training: 8 epoch. 1000 iteration. Loss:1.9054499864578247
+Training: 8 epoch. 1100 iteration. Loss:1.9745415449142456
+Training: 8 epoch. 1200 iteration. Loss:2.0468246936798096
+Training: 8 epoch. 1300 iteration. Loss:2.0559494495391846
+Training: 8 epoch. 1400 iteration. Loss:2.014235734939575
+Training: 8 epoch. 1500 iteration. Loss:1.9078656435012817
+Training: 8 epoch. 1600 iteration. Loss:1.9138259887695312
+Training: 8 epoch. 1700 iteration. Loss:2.049798011779785
+Training: 8 epoch. 1800 iteration. Loss:1.9448413848876953
+Training loss (ave.): 2.012972327931722
+
+Validation start
+Validation loss: 1.761518563079834, Accuracy: 0.6328
+
+total epoch: 69
+
+Train start
+Training: 9 epoch. 100 iteration. Loss:1.7261179685592651
+Training: 9 epoch. 200 iteration. Loss:1.8665355443954468
+Training: 9 epoch. 300 iteration. Loss:1.775181770324707
+Training: 9 epoch. 400 iteration. Loss:1.796920895576477
+Training: 9 epoch. 500 iteration. Loss:1.642152190208435
+Training: 9 epoch. 600 iteration. Loss:1.6112686395645142
+Training: 9 epoch. 700 iteration. Loss:1.7198680639266968
+Training: 9 epoch. 800 iteration. Loss:1.6592341661453247
+Training: 9 epoch. 900 iteration. Loss:1.6496347188949585
+Training: 9 epoch. 1000 iteration. Loss:1.6321545839309692
+Training: 9 epoch. 1100 iteration. Loss:1.6749318838119507
+Training: 9 epoch. 1200 iteration. Loss:1.4631859064102173
+Training: 9 epoch. 1300 iteration. Loss:1.6031917333602905
+Training: 9 epoch. 1400 iteration. Loss:1.5122833251953125
+Training: 9 epoch. 1500 iteration. Loss:1.3737210035324097
+Training: 9 epoch. 1600 iteration. Loss:1.458168387413025
+Training: 9 epoch. 1700 iteration. Loss:1.3182297945022583
+Training: 9 epoch. 1800 iteration. Loss:1.457024097442627
+Training loss (ave.): 1.5859326194763184
+
+Validation start
+Validation loss: 1.2618065181732179, Accuracy: 0.7373
+
+total epoch: 70
+
+Train start
+Training: 10 epoch. 100 iteration. Loss:1.4503912925720215
+Training: 10 epoch. 200 iteration. Loss:1.2363680601119995
+Training: 10 epoch. 300 iteration. Loss:1.4433180093765259
+Training: 10 epoch. 400 iteration. Loss:1.496281385421753
+Training: 10 epoch. 500 iteration. Loss:1.276598334312439
+Training: 10 epoch. 600 iteration. Loss:1.3911983966827393
+Training: 10 epoch. 700 iteration. Loss:1.3137131929397583
+Training: 10 epoch. 800 iteration. Loss:1.130183458328247
+Training: 10 epoch. 900 iteration. Loss:1.0268253087997437
+Training: 10 epoch. 1000 iteration. Loss:1.2285174131393433
+Training: 10 epoch. 1100 iteration. Loss:1.122620940208435
+Training: 10 epoch. 1200 iteration. Loss:1.031930923461914
+Training: 10 epoch. 1300 iteration. Loss:1.4316785335540771
+Training: 10 epoch. 1400 iteration. Loss:1.0050511360168457
+Training: 10 epoch. 1500 iteration. Loss:1.275770902633667
+Training: 10 epoch. 1600 iteration. Loss:1.1556390523910522
+Training: 10 epoch. 1700 iteration. Loss:1.1035547256469727
+Training: 10 epoch. 1800 iteration. Loss:1.1350024938583374
+Training loss (ave.): 1.1895854333559672
+
+Validation start
+Validation loss: 0.9393241436004639, Accuracy: 0.7828
+
+total epoch: 71
+
+Train start
+Training: 11 epoch. 100 iteration. Loss:1.0083231925964355
+Training: 11 epoch. 200 iteration. Loss:0.955727219581604
+Training: 11 epoch. 300 iteration. Loss:0.8857300281524658
+Training: 11 epoch. 400 iteration. Loss:1.105904459953308
+Training: 11 epoch. 500 iteration. Loss:1.0176752805709839
+Training: 11 epoch. 600 iteration. Loss:0.9855197668075562
+Training: 11 epoch. 700 iteration. Loss:0.8755150437355042
+Training: 11 epoch. 800 iteration. Loss:0.9737554788589478
+Training: 11 epoch. 900 iteration. Loss:1.0130810737609863
+Training: 11 epoch. 1000 iteration. Loss:0.9546300768852234
+Training: 11 epoch. 1100 iteration. Loss:0.8797503113746643
+Training: 11 epoch. 1200 iteration. Loss:0.9365485310554504
+Training: 11 epoch. 1300 iteration. Loss:1.0609583854675293
+Training: 11 epoch. 1400 iteration. Loss:0.707784116268158
+Training: 11 epoch. 1500 iteration. Loss:0.6971237063407898
+Training: 11 epoch. 1600 iteration. Loss:0.8391409516334534
+Training: 11 epoch. 1700 iteration. Loss:0.9955890774726868
+Training: 11 epoch. 1800 iteration. Loss:0.8009898066520691
+Training loss (ave.): 0.9544218775749207
+
+Validation start
+Validation loss: 0.7560230481147766, Accuracy: 0.8243
+
+total epoch: 72
+
+Train start
+Training: 12 epoch. 100 iteration. Loss:0.6906168460845947
+Training: 12 epoch. 200 iteration. Loss:0.818757176399231
+Training: 12 epoch. 300 iteration. Loss:0.8811661005020142
+Training: 12 epoch. 400 iteration. Loss:0.695510745048523
+Training: 12 epoch. 500 iteration. Loss:0.8710289597511292
+Training: 12 epoch. 600 iteration. Loss:0.884179949760437
+Training: 12 epoch. 700 iteration. Loss:0.7103252410888672
+Training: 12 epoch. 800 iteration. Loss:0.8037999868392944
+Training: 12 epoch. 900 iteration. Loss:0.9821271300315857
+Training: 12 epoch. 1000 iteration. Loss:0.6410014629364014
+Training: 12 epoch. 1100 iteration. Loss:0.727958083152771
+Training: 12 epoch. 1200 iteration. Loss:0.7969459295272827
+Training: 12 epoch. 1300 iteration. Loss:0.6851695775985718
+Training: 12 epoch. 1400 iteration. Loss:0.7216401100158691
+Training: 12 epoch. 1500 iteration. Loss:0.6161847710609436
+Training: 12 epoch. 1600 iteration. Loss:0.7180427312850952
+Training: 12 epoch. 1700 iteration. Loss:0.681849479675293
+Training: 12 epoch. 1800 iteration. Loss:0.6217591166496277
+Training loss (ave.): 0.8109294857343038
+
+Validation start
+Validation loss: 0.6434931431770324, Accuracy: 0.8442
+
+total epoch: 73
+
+Train start
+Training: 13 epoch. 100 iteration. Loss:0.8881771564483643
+Training: 13 epoch. 200 iteration. Loss:0.7052975296974182
+Training: 13 epoch. 300 iteration. Loss:0.9915869235992432
+Training: 13 epoch. 400 iteration. Loss:0.5921891927719116
+Training: 13 epoch. 500 iteration. Loss:0.6113828420639038
+Training: 13 epoch. 600 iteration. Loss:0.7123232483863831
+Training: 13 epoch. 700 iteration. Loss:0.6248378753662109
+Training: 13 epoch. 800 iteration. Loss:0.6591141223907471
+Training: 13 epoch. 900 iteration. Loss:0.5825002193450928
+Training: 13 epoch. 1000 iteration. Loss:0.5793988108634949
+Training: 13 epoch. 1100 iteration. Loss:0.7336733937263489
+Training: 13 epoch. 1200 iteration. Loss:0.7775275111198425
+Training: 13 epoch. 1300 iteration. Loss:0.7795310616493225
+Training: 13 epoch. 1400 iteration. Loss:0.5125603675842285
+Training: 13 epoch. 1500 iteration. Loss:0.595350980758667
+Training: 13 epoch. 1600 iteration. Loss:0.6929566860198975
+Training: 13 epoch. 1700 iteration. Loss:0.8371984958648682
+Training: 13 epoch. 1800 iteration. Loss:0.5573124289512634
+Training loss (ave.): 0.7181378517786662
+
+Validation start
+Validation loss: 0.5661647891521454, Accuracy: 0.8595
+
+total epoch: 74
+
+Train start
+Training: 14 epoch. 100 iteration. Loss:0.4535304307937622
+Training: 14 epoch. 200 iteration. Loss:0.5944705009460449
+Training: 14 epoch. 300 iteration. Loss:0.5564828515052795
+Training: 14 epoch. 400 iteration. Loss:0.8980998396873474
+Training: 14 epoch. 500 iteration. Loss:0.8201454877853394
+Training: 14 epoch. 600 iteration. Loss:0.7394609451293945
+Training: 14 epoch. 700 iteration. Loss:0.6051400899887085
+Training: 14 epoch. 800 iteration. Loss:0.8536224961280823
+Training: 14 epoch. 900 iteration. Loss:0.5312927961349487
+Training: 14 epoch. 1000 iteration. Loss:0.6943519711494446
+Training: 14 epoch. 1100 iteration. Loss:0.4850797951221466
+Training: 14 epoch. 1200 iteration. Loss:0.5374957323074341
+Training: 14 epoch. 1300 iteration. Loss:0.8529345393180847
+Training: 14 epoch. 1400 iteration. Loss:0.8003179430961609
+Training: 14 epoch. 1500 iteration. Loss:0.6250571012496948
+Training: 14 epoch. 1600 iteration. Loss:0.7247279286384583
+Training: 14 epoch. 1700 iteration. Loss:0.6198680400848389
+Training: 14 epoch. 1800 iteration. Loss:0.41709160804748535
+Training loss (ave.): 0.652830011844635
+
+Validation start
+Validation loss: 0.5124395099639892, Accuracy: 0.8706
+
+total epoch: 75
+
+Train start
+Training: 15 epoch. 100 iteration. Loss:0.4627048075199127
+Training: 15 epoch. 200 iteration. Loss:0.6573329567909241
+Training: 15 epoch. 300 iteration. Loss:0.3890492618083954
+Training: 15 epoch. 400 iteration. Loss:0.5589413642883301
+Training: 15 epoch. 500 iteration. Loss:0.6394321918487549
+Training: 15 epoch. 600 iteration. Loss:0.4521624445915222
+Training: 15 epoch. 700 iteration. Loss:0.5834385752677917
+Training: 15 epoch. 800 iteration. Loss:0.5551705956459045
+Training: 15 epoch. 900 iteration. Loss:0.5985240936279297
+Training: 15 epoch. 1000 iteration. Loss:0.5182386636734009
+Training: 15 epoch. 1100 iteration. Loss:0.8287414908409119
+Training: 15 epoch. 1200 iteration. Loss:0.8148906826972961
+Training: 15 epoch. 1300 iteration. Loss:0.615485429763794
+Training: 15 epoch. 1400 iteration. Loss:0.719037652015686
+Training: 15 epoch. 1500 iteration. Loss:0.6595062017440796
+Training: 15 epoch. 1600 iteration. Loss:0.7686489224433899
+Training: 15 epoch. 1700 iteration. Loss:0.5815479755401611
+Training: 15 epoch. 1800 iteration. Loss:0.8760722279548645
+Training loss (ave.): 0.6020305685679118
+
+Validation start
+Validation loss: 0.4707911696434021, Accuracy: 0.8799
+
+total epoch: 76
+
+Train start
+Training: 16 epoch. 100 iteration. Loss:0.32091397047042847
+Training: 16 epoch. 200 iteration. Loss:0.6974254846572876
+Training: 16 epoch. 300 iteration. Loss:0.4395180344581604
+Training: 16 epoch. 400 iteration. Loss:0.6113653779029846
+Training: 16 epoch. 500 iteration. Loss:0.5229988098144531
+Training: 16 epoch. 600 iteration. Loss:0.45554596185684204
+Training: 16 epoch. 700 iteration. Loss:0.9211123585700989
+Training: 16 epoch. 800 iteration. Loss:0.7074185609817505
+Training: 16 epoch. 900 iteration. Loss:0.7196504473686218
+Training: 16 epoch. 1000 iteration. Loss:0.7526754140853882
+Training: 16 epoch. 1100 iteration. Loss:0.6615418195724487
+Training: 16 epoch. 1200 iteration. Loss:0.48066776990890503
+Training: 16 epoch. 1300 iteration. Loss:0.5743693709373474
+Training: 16 epoch. 1400 iteration. Loss:0.7712575793266296
+Training: 16 epoch. 1500 iteration. Loss:0.6395432949066162
+Training: 16 epoch. 1600 iteration. Loss:0.4661588668823242
+Training: 16 epoch. 1700 iteration. Loss:0.49162593483924866
+Training: 16 epoch. 1800 iteration. Loss:0.6548964381217957
+Training loss (ave.): 0.5635713466803233
+
+Validation start
+Validation loss: 0.43966933588981627, Accuracy: 0.8831
+
+total epoch: 77
+
+Train start
+Training: 17 epoch. 100 iteration. Loss:0.3463670611381531
+Training: 17 epoch. 200 iteration. Loss:0.5590888261795044
+Training: 17 epoch. 300 iteration. Loss:0.3643641769886017
+Training: 17 epoch. 400 iteration. Loss:0.631466269493103
+Training: 17 epoch. 500 iteration. Loss:0.5063875317573547
+Training: 17 epoch. 600 iteration. Loss:0.5878693461418152
+Training: 17 epoch. 700 iteration. Loss:0.49581751227378845
+Training: 17 epoch. 800 iteration. Loss:0.7060660123825073
+Training: 17 epoch. 900 iteration. Loss:0.6901701092720032
+Training: 17 epoch. 1000 iteration. Loss:0.7093484401702881
+Training: 17 epoch. 1100 iteration. Loss:0.3936031460762024
+Training: 17 epoch. 1200 iteration. Loss:0.4175308048725128
+Training: 17 epoch. 1300 iteration. Loss:0.4694216549396515
+Training: 17 epoch. 1400 iteration. Loss:0.3606794774532318
+Training: 17 epoch. 1500 iteration. Loss:0.4361753761768341
+Training: 17 epoch. 1600 iteration. Loss:0.5399481058120728
+Training: 17 epoch. 1700 iteration. Loss:0.31936633586883545
+Training: 17 epoch. 1800 iteration. Loss:0.6603190898895264
+Training loss (ave.): 0.5324760197162628
+
+Validation start
+Validation loss: 0.4158631420135498, Accuracy: 0.8876
+
+total epoch: 78
+
+Train start
+Training: 18 epoch. 100 iteration. Loss:0.44260260462760925
+Training: 18 epoch. 200 iteration. Loss:0.6319485902786255
+Training: 18 epoch. 300 iteration. Loss:0.49955305457115173
+Training: 18 epoch. 400 iteration. Loss:0.3554086685180664
+Training: 18 epoch. 500 iteration. Loss:0.45459896326065063
+Training: 18 epoch. 600 iteration. Loss:0.6154780983924866
+Training: 18 epoch. 700 iteration. Loss:0.48611190915107727
+Training: 18 epoch. 800 iteration. Loss:0.3452030420303345
+Training: 18 epoch. 900 iteration. Loss:0.3011782765388489
+Training: 18 epoch. 1000 iteration. Loss:0.672014057636261
+Training: 18 epoch. 1100 iteration. Loss:0.4316157102584839
+Training: 18 epoch. 1200 iteration. Loss:0.8150404691696167
+Training: 18 epoch. 1300 iteration. Loss:0.5131697654724121
+Training: 18 epoch. 1400 iteration. Loss:0.5497445464134216
+Training: 18 epoch. 1500 iteration. Loss:0.5424172282218933
+Training: 18 epoch. 1600 iteration. Loss:0.40278589725494385
+Training: 18 epoch. 1700 iteration. Loss:0.5810419917106628
+Training: 18 epoch. 1800 iteration. Loss:0.32502585649490356
+Training loss (ave.): 0.5123081094344457
+
+Validation start
+Validation loss: 0.39601379919052127, Accuracy: 0.8916
+
+total epoch: 79
+
+Train start
+Training: 19 epoch. 100 iteration. Loss:0.48783794045448303
+Training: 19 epoch. 200 iteration. Loss:0.538825511932373
+Training: 19 epoch. 300 iteration. Loss:0.2824249863624573
+Training: 19 epoch. 400 iteration. Loss:0.6317110061645508
+Training: 19 epoch. 500 iteration. Loss:0.3372899889945984
+Training: 19 epoch. 600 iteration. Loss:0.46086594462394714
+Training: 19 epoch. 700 iteration. Loss:0.3123105466365814
+Training: 19 epoch. 800 iteration. Loss:0.7857494354248047
+Training: 19 epoch. 900 iteration. Loss:0.5928679704666138
+Training: 19 epoch. 1000 iteration. Loss:0.36214739084243774
+Training: 19 epoch. 1100 iteration. Loss:0.6012004613876343
+Training: 19 epoch. 1200 iteration. Loss:0.28054532408714294
+Training: 19 epoch. 1300 iteration. Loss:0.46209922432899475
+Training: 19 epoch. 1400 iteration. Loss:0.23591062426567078
+Training: 19 epoch. 1500 iteration. Loss:0.40727025270462036
+Training: 19 epoch. 1600 iteration. Loss:0.45145806670188904
+Training: 19 epoch. 1700 iteration. Loss:0.27695196866989136
+Training: 19 epoch. 1800 iteration. Loss:0.4678232967853546
+Training loss (ave.): 0.49291018143494925
+
+Validation start
+Validation loss: 0.3788817639350891, Accuracy: 0.8948
+
+total epoch: 80
+
+Train start
+Training: 20 epoch. 100 iteration. Loss:0.7394909262657166
+Training: 20 epoch. 200 iteration. Loss:0.44852474331855774
+Training: 20 epoch. 300 iteration. Loss:0.32310059666633606
+Training: 20 epoch. 400 iteration. Loss:0.4401557445526123
+Training: 20 epoch. 500 iteration. Loss:0.3013635277748108
+Training: 20 epoch. 600 iteration. Loss:0.35361447930336
+Training: 20 epoch. 700 iteration. Loss:0.34750720858573914
+Training: 20 epoch. 800 iteration. Loss:0.38795000314712524
+Training: 20 epoch. 900 iteration. Loss:0.25494104623794556
+Training: 20 epoch. 1000 iteration. Loss:0.4820203185081482
+Training: 20 epoch. 1100 iteration. Loss:0.41457587480545044
+Training: 20 epoch. 1200 iteration. Loss:0.6725100874900818
+Training: 20 epoch. 1300 iteration. Loss:0.5264467000961304
+Training: 20 epoch. 1400 iteration. Loss:0.8907120823860168
+Training: 20 epoch. 1500 iteration. Loss:0.5633987188339233
+Training: 20 epoch. 1600 iteration. Loss:0.43427276611328125
+Training: 20 epoch. 1700 iteration. Loss:0.46119195222854614
+Training: 20 epoch. 1800 iteration. Loss:0.44237807393074036
+Training loss (ave.): 0.47410934612751005
+
+Validation start
+Validation loss: 0.364347447514534, Accuracy: 0.8979
+
+total epoch: 81
+
+Evaluate hyper parameters...
+not improved...
+Reset hyperparameters:
+batchSize: 32, epoch: 20, lr: 0.002, activation: 1, optimizer: 1
+
+-> Continue training with new hyper parameters
+
+MyNet(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (dropout1): Dropout(p=0.25, inplace=False)
+  (dropout2): Dropout(p=0.5, inplace=False)
+  (fc1): Linear(in_features=9216, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+
+Train start
+Training: 1 epoch. 100 iteration. Loss:2.3788039684295654
+Training: 1 epoch. 200 iteration. Loss:2.3129589557647705
+Training: 1 epoch. 300 iteration. Loss:2.3184351921081543
+Training: 1 epoch. 400 iteration. Loss:2.2750134468078613
+Training: 1 epoch. 500 iteration. Loss:2.3223583698272705
+Training: 1 epoch. 600 iteration. Loss:2.322193145751953
+Training: 1 epoch. 700 iteration. Loss:2.3210108280181885
+Training: 1 epoch. 800 iteration. Loss:2.3519680500030518
+Training: 1 epoch. 900 iteration. Loss:2.326845407485962
+Training: 1 epoch. 1000 iteration. Loss:2.311427116394043
+Training: 1 epoch. 1100 iteration. Loss:2.2790746688842773
+Training: 1 epoch. 1200 iteration. Loss:2.35101580619812
+Training: 1 epoch. 1300 iteration. Loss:2.3078458309173584
+Training: 1 epoch. 1400 iteration. Loss:2.307926893234253
+Training: 1 epoch. 1500 iteration. Loss:2.2668638229370117
+Training: 1 epoch. 1600 iteration. Loss:2.3010787963867188
+Training: 1 epoch. 1700 iteration. Loss:2.3268446922302246
+Training: 1 epoch. 1800 iteration. Loss:2.2995171546936035
+Training loss (ave.): 2.3167570026397706
+
+Validation start
+Validation loss: 2.299381146621704, Accuracy: 0.1135
+
+total epoch: 82
+
+Train start
+Training: 2 epoch. 100 iteration. Loss:2.302544355392456
+Training: 2 epoch. 200 iteration. Loss:2.2712087631225586
+Training: 2 epoch. 300 iteration. Loss:2.2850377559661865
+Training: 2 epoch. 400 iteration. Loss:2.3227529525756836
+Training: 2 epoch. 500 iteration. Loss:2.292285442352295
+Training: 2 epoch. 600 iteration. Loss:2.3019659519195557
+Training: 2 epoch. 700 iteration. Loss:2.307044506072998
+Training: 2 epoch. 800 iteration. Loss:2.3187026977539062
+Training: 2 epoch. 900 iteration. Loss:2.3250575065612793
+Training: 2 epoch. 1000 iteration. Loss:2.2853996753692627
+Training: 2 epoch. 1100 iteration. Loss:2.3262693881988525
+Training: 2 epoch. 1200 iteration. Loss:2.3250298500061035
+Training: 2 epoch. 1300 iteration. Loss:2.3059325218200684
+Training: 2 epoch. 1400 iteration. Loss:2.345893621444702
+Training: 2 epoch. 1500 iteration. Loss:2.309248447418213
+Training: 2 epoch. 1600 iteration. Loss:2.321488380432129
+Training: 2 epoch. 1700 iteration. Loss:2.28843355178833
+Training: 2 epoch. 1800 iteration. Loss:2.3094866275787354
+Training loss (ave.): 2.303457745742798
+
+Validation start
+Validation loss: 2.298705305480957, Accuracy: 0.1135
+
+total epoch: 83
+
+Train start
+Training: 3 epoch. 100 iteration. Loss:2.3080713748931885
+Training: 3 epoch. 200 iteration. Loss:2.2902722358703613
+Training: 3 epoch. 300 iteration. Loss:2.2929539680480957
+Training: 3 epoch. 400 iteration. Loss:2.316779136657715
+Training: 3 epoch. 500 iteration. Loss:2.3227379322052
+Training: 3 epoch. 600 iteration. Loss:2.298250198364258
+Training: 3 epoch. 700 iteration. Loss:2.3470683097839355
+Training: 3 epoch. 800 iteration. Loss:2.2850570678710938
+Training: 3 epoch. 900 iteration. Loss:2.300745964050293
+Training: 3 epoch. 1000 iteration. Loss:2.2917542457580566
+Training: 3 epoch. 1100 iteration. Loss:2.300100564956665
+Training: 3 epoch. 1200 iteration. Loss:2.2829995155334473
+Training: 3 epoch. 1300 iteration. Loss:2.313803195953369
+Training: 3 epoch. 1400 iteration. Loss:2.288926839828491
+Training: 3 epoch. 1500 iteration. Loss:2.3040997982025146
+Training: 3 epoch. 1600 iteration. Loss:2.3020808696746826
+Training: 3 epoch. 1700 iteration. Loss:2.299541473388672
+Training: 3 epoch. 1800 iteration. Loss:2.2896528244018555
+Training loss (ave.): 2.301523504002889
+
+Validation start
+Validation loss: 2.2980971206665037, Accuracy: 0.1135
+
+total epoch: 84
+
+Train start
+Training: 4 epoch. 100 iteration. Loss:2.2939751148223877
+Training: 4 epoch. 200 iteration. Loss:2.298797845840454
+Training: 4 epoch. 300 iteration. Loss:2.2752509117126465
+Training: 4 epoch. 400 iteration. Loss:2.3178343772888184
+Training: 4 epoch. 500 iteration. Loss:2.2861380577087402
+Training: 4 epoch. 600 iteration. Loss:2.295637845993042
+Training: 4 epoch. 700 iteration. Loss:2.3288912773132324
+Training: 4 epoch. 800 iteration. Loss:2.31111216545105
+Training: 4 epoch. 900 iteration. Loss:2.3077402114868164
+Training: 4 epoch. 1000 iteration. Loss:2.3004274368286133
+Training: 4 epoch. 1100 iteration. Loss:2.3029417991638184
+Training: 4 epoch. 1200 iteration. Loss:2.2889912128448486
+Training: 4 epoch. 1300 iteration. Loss:2.2849323749542236
+Training: 4 epoch. 1400 iteration. Loss:2.3187737464904785
+Training: 4 epoch. 1500 iteration. Loss:2.2977943420410156
+Training: 4 epoch. 1600 iteration. Loss:2.2933461666107178
+Training: 4 epoch. 1700 iteration. Loss:2.292501926422119
+Training: 4 epoch. 1800 iteration. Loss:2.29443359375
+Training loss (ave.): 2.2992502128601076
+
+Validation start
+Validation loss: 2.296742446899414, Accuracy: 0.1135
+
+total epoch: 85
+
+Train start
+Training: 5 epoch. 100 iteration. Loss:2.2979209423065186
+Training: 5 epoch. 200 iteration. Loss:2.2988083362579346
+Training: 5 epoch. 300 iteration. Loss:2.322758674621582
+Training: 5 epoch. 400 iteration. Loss:2.308286428451538
+Training: 5 epoch. 500 iteration. Loss:2.29764461517334
+Training: 5 epoch. 600 iteration. Loss:2.294555187225342
+Training: 5 epoch. 700 iteration. Loss:2.279297113418579
+Training: 5 epoch. 800 iteration. Loss:2.2893245220184326
+Training: 5 epoch. 900 iteration. Loss:2.2660939693450928
+Training: 5 epoch. 1000 iteration. Loss:2.292853832244873
+Training: 5 epoch. 1100 iteration. Loss:2.2885570526123047
+Training: 5 epoch. 1200 iteration. Loss:2.288073778152466
+Training: 5 epoch. 1300 iteration. Loss:2.2991933822631836
+Training: 5 epoch. 1400 iteration. Loss:2.2941784858703613
+Training: 5 epoch. 1500 iteration. Loss:2.3129374980926514
+Training: 5 epoch. 1600 iteration. Loss:2.298813819885254
+Training: 5 epoch. 1700 iteration. Loss:2.29573130607605
+Training: 5 epoch. 1800 iteration. Loss:2.309713363647461
+Training loss (ave.): 2.2984374465942383
+
+Validation start
+Validation loss: 2.2953641647338867, Accuracy: 0.1135
+
+total epoch: 86
+
+Train start
+Training: 6 epoch. 100 iteration. Loss:2.2706704139709473
+Training: 6 epoch. 200 iteration. Loss:2.292149543762207
+Training: 6 epoch. 300 iteration. Loss:2.3150179386138916
+Training: 6 epoch. 400 iteration. Loss:2.259064197540283
+Training: 6 epoch. 500 iteration. Loss:2.2993252277374268
+Training: 6 epoch. 600 iteration. Loss:2.301295757293701
+Training: 6 epoch. 700 iteration. Loss:2.287264347076416
+Training: 6 epoch. 800 iteration. Loss:2.2996790409088135
+Training: 6 epoch. 900 iteration. Loss:2.292576313018799
+Training: 6 epoch. 1000 iteration. Loss:2.2845492362976074
+Training: 6 epoch. 1100 iteration. Loss:2.2913475036621094
+Training: 6 epoch. 1200 iteration. Loss:2.287590265274048
+Training: 6 epoch. 1300 iteration. Loss:2.303056001663208
+Training: 6 epoch. 1400 iteration. Loss:2.2859601974487305
+Training: 6 epoch. 1500 iteration. Loss:2.271047830581665
+Training: 6 epoch. 1600 iteration. Loss:2.297924280166626
+Training: 6 epoch. 1700 iteration. Loss:2.3078277111053467
+Training: 6 epoch. 1800 iteration. Loss:2.2861316204071045
+Training loss (ave.): 2.2967001130421956
+
+Validation start
+Validation loss: 2.2926865520477295, Accuracy: 0.1135
+
+total epoch: 87
+
+Train start
+Training: 7 epoch. 100 iteration. Loss:2.2968521118164062
+Training: 7 epoch. 200 iteration. Loss:2.275977373123169
+Training: 7 epoch. 300 iteration. Loss:2.2807326316833496
+Training: 7 epoch. 400 iteration. Loss:2.290813684463501
+Training: 7 epoch. 500 iteration. Loss:2.2801990509033203
+Training: 7 epoch. 600 iteration. Loss:2.2848236560821533
+Training: 7 epoch. 700 iteration. Loss:2.3097493648529053
+Training: 7 epoch. 800 iteration. Loss:2.2980129718780518
+Training: 7 epoch. 900 iteration. Loss:2.323993682861328
+Training: 7 epoch. 1000 iteration. Loss:2.2761926651000977
+Training: 7 epoch. 1100 iteration. Loss:2.3051881790161133
+Training: 7 epoch. 1200 iteration. Loss:2.3048388957977295
+Training: 7 epoch. 1300 iteration. Loss:2.282810688018799
+Training: 7 epoch. 1400 iteration. Loss:2.306464672088623
+Training: 7 epoch. 1500 iteration. Loss:2.299389362335205
+Training: 7 epoch. 1600 iteration. Loss:2.2845771312713623
+Training: 7 epoch. 1700 iteration. Loss:2.2755613327026367
+Training: 7 epoch. 1800 iteration. Loss:2.2854161262512207
+Training loss (ave.): 2.294173575592041
+
+Validation start
+Validation loss: 2.287750830078125, Accuracy: 0.1135
+
+total epoch: 88
+
+Train start
+Training: 8 epoch. 100 iteration. Loss:2.253119945526123
+Training: 8 epoch. 200 iteration. Loss:2.2889137268066406
+Training: 8 epoch. 300 iteration. Loss:2.266543388366699
+Training: 8 epoch. 400 iteration. Loss:2.256225347518921
+Training: 8 epoch. 500 iteration. Loss:2.326348066329956
+Training: 8 epoch. 600 iteration. Loss:2.302489757537842
+Training: 8 epoch. 700 iteration. Loss:2.291316509246826
+Training: 8 epoch. 800 iteration. Loss:2.2816216945648193
+Training: 8 epoch. 900 iteration. Loss:2.304034471511841
+Training: 8 epoch. 1000 iteration. Loss:2.2845137119293213
+Training: 8 epoch. 1100 iteration. Loss:2.321601629257202
+Training: 8 epoch. 1200 iteration. Loss:2.268171548843384
+Training: 8 epoch. 1300 iteration. Loss:2.2566888332366943
+Training: 8 epoch. 1400 iteration. Loss:2.2657392024993896
+Training: 8 epoch. 1500 iteration. Loss:2.2845537662506104
+Training: 8 epoch. 1600 iteration. Loss:2.2735564708709717
+Training: 8 epoch. 1700 iteration. Loss:2.290583848953247
+Training: 8 epoch. 1800 iteration. Loss:2.3054165840148926
+Training loss (ave.): 2.2882031836191814
+
+Validation start
+Validation loss: 2.276970193862915, Accuracy: 0.1783
+
+total epoch: 89
+
+Train start
+Training: 9 epoch. 100 iteration. Loss:2.289273500442505
+Training: 9 epoch. 200 iteration. Loss:2.2599592208862305
+Training: 9 epoch. 300 iteration. Loss:2.1969504356384277
+Training: 9 epoch. 400 iteration. Loss:2.265655755996704
+Training: 9 epoch. 500 iteration. Loss:2.240677833557129
+Training: 9 epoch. 600 iteration. Loss:2.296996593475342
+Training: 9 epoch. 700 iteration. Loss:2.2544779777526855
+Training: 9 epoch. 800 iteration. Loss:2.29565691947937
+Training: 9 epoch. 900 iteration. Loss:2.2610702514648438
+Training: 9 epoch. 1000 iteration. Loss:2.2450127601623535
+Training: 9 epoch. 1100 iteration. Loss:2.2550876140594482
+Training: 9 epoch. 1200 iteration. Loss:2.275153160095215
+Training: 9 epoch. 1300 iteration. Loss:2.2951619625091553
+Training: 9 epoch. 1400 iteration. Loss:2.2767093181610107
+Training: 9 epoch. 1500 iteration. Loss:2.283923625946045
+Training: 9 epoch. 1600 iteration. Loss:2.331240653991699
+Training: 9 epoch. 1700 iteration. Loss:2.2712905406951904
+Training: 9 epoch. 1800 iteration. Loss:2.253514051437378
+Training loss (ave.): 2.2742463424682615
+
+Validation start
+Validation loss: 2.2489654037475586, Accuracy: 0.2202
+
+total epoch: 90
+
+Train start
+Training: 10 epoch. 100 iteration. Loss:2.248131513595581
+Training: 10 epoch. 200 iteration. Loss:2.2739336490631104
+Training: 10 epoch. 300 iteration. Loss:2.2437124252319336
+Training: 10 epoch. 400 iteration. Loss:2.2957165241241455
+Training: 10 epoch. 500 iteration. Loss:2.212848663330078
+Training: 10 epoch. 600 iteration. Loss:2.267728328704834
+Training: 10 epoch. 700 iteration. Loss:2.2363736629486084
+Training: 10 epoch. 800 iteration. Loss:2.3044817447662354
+Training: 10 epoch. 900 iteration. Loss:2.2265594005584717
+Training: 10 epoch. 1000 iteration. Loss:2.3012185096740723
+Training: 10 epoch. 1100 iteration. Loss:2.1939306259155273
+Training: 10 epoch. 1200 iteration. Loss:2.23258638381958
+Training: 10 epoch. 1300 iteration. Loss:2.2794711589813232
+Training: 10 epoch. 1400 iteration. Loss:2.189002752304077
+Training: 10 epoch. 1500 iteration. Loss:2.2612476348876953
+Training: 10 epoch. 1600 iteration. Loss:2.1902806758880615
+Training: 10 epoch. 1700 iteration. Loss:2.153693437576294
+Training: 10 epoch. 1800 iteration. Loss:2.227627754211426
+Training loss (ave.): 2.2288355562845865
+
+Validation start
+Validation loss: 2.1588652141571045, Accuracy: 0.4076
+
+total epoch: 91
+
+Train start
+Training: 11 epoch. 100 iteration. Loss:2.1227593421936035
+Training: 11 epoch. 200 iteration. Loss:2.191492795944214
+Training: 11 epoch. 300 iteration. Loss:2.184481382369995
+Training: 11 epoch. 400 iteration. Loss:2.180730104446411
+Training: 11 epoch. 500 iteration. Loss:2.1338865756988525
+Training: 11 epoch. 600 iteration. Loss:2.1138129234313965
+Training: 11 epoch. 700 iteration. Loss:2.1313958168029785
+Training: 11 epoch. 800 iteration. Loss:2.0769433975219727
+Training: 11 epoch. 900 iteration. Loss:2.040527820587158
+Training: 11 epoch. 1000 iteration. Loss:2.120192527770996
+Training: 11 epoch. 1100 iteration. Loss:2.0576257705688477
+Training: 11 epoch. 1200 iteration. Loss:2.0623714923858643
+Training: 11 epoch. 1300 iteration. Loss:1.9140764474868774
+Training: 11 epoch. 1400 iteration. Loss:2.003726005554199
+Training: 11 epoch. 1500 iteration. Loss:1.8620023727416992
+Training: 11 epoch. 1600 iteration. Loss:2.0903656482696533
+Training: 11 epoch. 1700 iteration. Loss:2.104539632797241
+Training: 11 epoch. 1800 iteration. Loss:1.9316257238388062
+Training loss (ave.): 2.077340309333801
+
+Validation start
+Validation loss: 1.8726698696136475, Accuracy: 0.5531
+
+total epoch: 92
+
+Train start
+Training: 12 epoch. 100 iteration. Loss:1.8591686487197876
+Training: 12 epoch. 200 iteration. Loss:1.8347495794296265
+Training: 12 epoch. 300 iteration. Loss:1.9352155923843384
+Training: 12 epoch. 400 iteration. Loss:1.7607403993606567
+Training: 12 epoch. 500 iteration. Loss:1.7106386423110962
+Training: 12 epoch. 600 iteration. Loss:1.9201409816741943
+Training: 12 epoch. 700 iteration. Loss:1.7920324802398682
+Training: 12 epoch. 800 iteration. Loss:1.8541721105575562
+Training: 12 epoch. 900 iteration. Loss:1.7461520433425903
+Training: 12 epoch. 1000 iteration. Loss:1.8147116899490356
+Training: 12 epoch. 1100 iteration. Loss:1.6072685718536377
+Training: 12 epoch. 1200 iteration. Loss:1.6127008199691772
+Training: 12 epoch. 1300 iteration. Loss:1.4748890399932861
+Training: 12 epoch. 1400 iteration. Loss:1.4957832098007202
+Training: 12 epoch. 1500 iteration. Loss:1.7157682180404663
+Training: 12 epoch. 1600 iteration. Loss:1.6590840816497803
+Training: 12 epoch. 1700 iteration. Loss:1.4185686111450195
+Training: 12 epoch. 1800 iteration. Loss:1.591729998588562
+Training loss (ave.): 1.7070184412638347
+
+Validation start
+Validation loss: 1.395548279953003, Accuracy: 0.6969
+
+total epoch: 93
+
+Train start
+Training: 13 epoch. 100 iteration. Loss:1.584474802017212
+Training: 13 epoch. 200 iteration. Loss:1.2790131568908691
+Training: 13 epoch. 300 iteration. Loss:1.474928379058838
+Training: 13 epoch. 400 iteration. Loss:1.6058555841445923
+Training: 13 epoch. 500 iteration. Loss:1.298079252243042
+Training: 13 epoch. 600 iteration. Loss:1.403063416481018
+Training: 13 epoch. 700 iteration. Loss:1.4073735475540161
+Training: 13 epoch. 800 iteration. Loss:1.235084056854248
+Training: 13 epoch. 900 iteration. Loss:1.2465507984161377
+Training: 13 epoch. 1000 iteration. Loss:1.2758193016052246
+Training: 13 epoch. 1100 iteration. Loss:1.3885537385940552
+Training: 13 epoch. 1200 iteration. Loss:1.1138814687728882
+Training: 13 epoch. 1300 iteration. Loss:1.3502695560455322
+Training: 13 epoch. 1400 iteration. Loss:1.3465994596481323
+Training: 13 epoch. 1500 iteration. Loss:1.1232831478118896
+Training: 13 epoch. 1600 iteration. Loss:1.2514113187789917
+Training: 13 epoch. 1700 iteration. Loss:1.1249274015426636
+Training: 13 epoch. 1800 iteration. Loss:1.1796989440917969
+Training loss (ave.): 1.3019101282119752
+
+Validation start
+Validation loss: 1.030615818977356, Accuracy: 0.7813
+
+total epoch: 94
+
+Train start
+Training: 14 epoch. 100 iteration. Loss:1.2311710119247437
+Training: 14 epoch. 200 iteration. Loss:1.3535844087600708
+Training: 14 epoch. 300 iteration. Loss:0.8742163181304932
+Training: 14 epoch. 400 iteration. Loss:0.9181803464889526
+Training: 14 epoch. 500 iteration. Loss:1.276181697845459
+Training: 14 epoch. 600 iteration. Loss:0.902309238910675
+Training: 14 epoch. 700 iteration. Loss:1.0177682638168335
+Training: 14 epoch. 800 iteration. Loss:1.158378005027771
+Training: 14 epoch. 900 iteration. Loss:1.1372941732406616
+Training: 14 epoch. 1000 iteration. Loss:1.1386958360671997
+Training: 14 epoch. 1100 iteration. Loss:0.9816819429397583
+Training: 14 epoch. 1200 iteration. Loss:1.133472204208374
+Training: 14 epoch. 1300 iteration. Loss:1.0645277500152588
+Training: 14 epoch. 1400 iteration. Loss:1.1025311946868896
+Training: 14 epoch. 1500 iteration. Loss:0.8675322532653809
+Training: 14 epoch. 1600 iteration. Loss:0.75855553150177
+Training: 14 epoch. 1700 iteration. Loss:1.0409200191497803
+Training: 14 epoch. 1800 iteration. Loss:0.9568076133728027
+Training loss (ave.): 1.024229053147634
+
+Validation start
+Validation loss: 0.8086499459266663, Accuracy: 0.8206
+
+total epoch: 95
+
+Train start
+Training: 15 epoch. 100 iteration. Loss:0.963254988193512
+Training: 15 epoch. 200 iteration. Loss:0.8378795981407166
+Training: 15 epoch. 300 iteration. Loss:0.9191782474517822
+Training: 15 epoch. 400 iteration. Loss:0.7278319597244263
+Training: 15 epoch. 500 iteration. Loss:0.9978459477424622
+Training: 15 epoch. 600 iteration. Loss:1.0026967525482178
+Training: 15 epoch. 700 iteration. Loss:1.0372661352157593
+Training: 15 epoch. 800 iteration. Loss:0.9059571623802185
+Training: 15 epoch. 900 iteration. Loss:0.9821323752403259
+Training: 15 epoch. 1000 iteration. Loss:1.0539863109588623
+Training: 15 epoch. 1100 iteration. Loss:0.7458770275115967
+Training: 15 epoch. 1200 iteration. Loss:1.0905513763427734
+Training: 15 epoch. 1300 iteration. Loss:0.9520938396453857
+Training: 15 epoch. 1400 iteration. Loss:0.7229898571968079
+Training: 15 epoch. 1500 iteration. Loss:0.8331588506698608
+Training: 15 epoch. 1600 iteration. Loss:0.8206040263175964
+Training: 15 epoch. 1700 iteration. Loss:0.8405550718307495
+Training: 15 epoch. 1800 iteration. Loss:0.9842109084129333
+Training loss (ave.): 0.8552894917011261
+
+Validation start
+Validation loss: 0.672692723941803, Accuracy: 0.8422
+
+total epoch: 96
+
+Train start
+Training: 16 epoch. 100 iteration. Loss:0.7073081135749817
+Training: 16 epoch. 200 iteration. Loss:0.7889500856399536
+Training: 16 epoch. 300 iteration. Loss:0.4420875608921051
+Training: 16 epoch. 400 iteration. Loss:0.6247503757476807
+Training: 16 epoch. 500 iteration. Loss:0.9083800315856934
+Training: 16 epoch. 600 iteration. Loss:0.9707711338996887
+Training: 16 epoch. 700 iteration. Loss:0.9030596017837524
+Training: 16 epoch. 800 iteration. Loss:0.9766518473625183
+Training: 16 epoch. 900 iteration. Loss:0.9378138184547424
+Training: 16 epoch. 1000 iteration. Loss:0.6319087147712708
+Training: 16 epoch. 1100 iteration. Loss:0.5582424402236938
+Training: 16 epoch. 1200 iteration. Loss:0.5491517186164856
+Training: 16 epoch. 1300 iteration. Loss:0.6471020579338074
+Training: 16 epoch. 1400 iteration. Loss:0.9722857475280762
+Training: 16 epoch. 1500 iteration. Loss:0.9965596199035645
+Training: 16 epoch. 1600 iteration. Loss:0.6935132145881653
+Training: 16 epoch. 1700 iteration. Loss:0.8661531209945679
+Training: 16 epoch. 1800 iteration. Loss:0.8391966819763184
+Training loss (ave.): 0.7422164109071095
+
+Validation start
+Validation loss: 0.5817653076171875, Accuracy: 0.8613
+
+total epoch: 97
+
+Train start
+Training: 17 epoch. 100 iteration. Loss:0.7484349608421326
+Training: 17 epoch. 200 iteration. Loss:0.5674319863319397
+Training: 17 epoch. 300 iteration. Loss:0.6566050052642822
+Training: 17 epoch. 400 iteration. Loss:0.6752073764801025
+Training: 17 epoch. 500 iteration. Loss:0.6257144808769226
+Training: 17 epoch. 600 iteration. Loss:0.6606156229972839
+Training: 17 epoch. 700 iteration. Loss:0.8757215142250061
+Training: 17 epoch. 800 iteration. Loss:0.6001692414283752
+Training: 17 epoch. 900 iteration. Loss:0.5893223881721497
+Training: 17 epoch. 1000 iteration. Loss:0.6120480895042419
+Training: 17 epoch. 1100 iteration. Loss:0.5280585289001465
+Training: 17 epoch. 1200 iteration. Loss:0.6881186366081238
+Training: 17 epoch. 1300 iteration. Loss:0.8741743564605713
+Training: 17 epoch. 1400 iteration. Loss:0.6110339760780334
+Training: 17 epoch. 1500 iteration. Loss:0.6613186001777649
+Training: 17 epoch. 1600 iteration. Loss:1.0998841524124146
+Training: 17 epoch. 1700 iteration. Loss:0.8143506646156311
+Training: 17 epoch. 1800 iteration. Loss:0.5398198962211609
+Training loss (ave.): 0.6667557132720947
+
+Validation start
+Validation loss: 0.5196784446716308, Accuracy: 0.8716
+
+total epoch: 98
+
+Train start
+Training: 18 epoch. 100 iteration. Loss:0.423471063375473
+Training: 18 epoch. 200 iteration. Loss:0.7369000911712646
+Training: 18 epoch. 300 iteration. Loss:0.5058819055557251
+Training: 18 epoch. 400 iteration. Loss:0.5375373959541321
+Training: 18 epoch. 500 iteration. Loss:0.827093243598938
+Training: 18 epoch. 600 iteration. Loss:0.5600824952125549
+Training: 18 epoch. 700 iteration. Loss:0.7154338359832764
+Training: 18 epoch. 800 iteration. Loss:0.5572546720504761
+Training: 18 epoch. 900 iteration. Loss:0.6058603525161743
+Training: 18 epoch. 1000 iteration. Loss:0.7961949110031128
+Training: 18 epoch. 1100 iteration. Loss:0.9137690663337708
+Training: 18 epoch. 1200 iteration. Loss:0.5569535493850708
+Training: 18 epoch. 1300 iteration. Loss:0.5562326908111572
+Training: 18 epoch. 1400 iteration. Loss:0.8286420106887817
+Training: 18 epoch. 1500 iteration. Loss:0.4839542508125305
+Training: 18 epoch. 1600 iteration. Loss:0.6014878749847412
+Training: 18 epoch. 1700 iteration. Loss:0.44790148735046387
+Training: 18 epoch. 1800 iteration. Loss:0.5368702411651611
+Training loss (ave.): 0.6129610780874888
+
+Validation start
+Validation loss: 0.47525631732940676, Accuracy: 0.8808
+
+total epoch: 99
+
+Train start
+Training: 19 epoch. 100 iteration. Loss:0.5331589579582214
+Training: 19 epoch. 200 iteration. Loss:0.692458987236023
+Training: 19 epoch. 300 iteration. Loss:0.6572944521903992
+Training: 19 epoch. 400 iteration. Loss:0.48014122247695923
+Training: 19 epoch. 500 iteration. Loss:0.738113284111023
+Training: 19 epoch. 600 iteration. Loss:0.5929684638977051
+Training: 19 epoch. 700 iteration. Loss:0.3979091942310333
+Training: 19 epoch. 800 iteration. Loss:0.4424676299095154
+Training: 19 epoch. 900 iteration. Loss:0.5027487277984619
+Training: 19 epoch. 1000 iteration. Loss:0.5188043713569641
+Training: 19 epoch. 1100 iteration. Loss:0.5765659809112549
+Training: 19 epoch. 1200 iteration. Loss:0.5548539757728577
+Training: 19 epoch. 1300 iteration. Loss:0.5875173807144165
+Training: 19 epoch. 1400 iteration. Loss:0.45564377307891846
+Training: 19 epoch. 1500 iteration. Loss:0.4912365674972534
+Training: 19 epoch. 1600 iteration. Loss:0.47403502464294434
+Training: 19 epoch. 1700 iteration. Loss:0.49419930577278137
+Training: 19 epoch. 1800 iteration. Loss:0.5122702717781067
+Training loss (ave.): 0.5693990077495575
+
+Validation start
+Validation loss: 0.44197437796592715, Accuracy: 0.8857
+
+total epoch: 100
+Finish training
+
+Evaluate hyper parameters...
+not improved...
+-> Finish training!
+
+
+--------- Train with optimised hyper parameters ---------
+
+MyNet(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (dropout1): Dropout(p=0.25, inplace=False)
+  (dropout2): Dropout(p=0.5, inplace=False)
+  (fc1): Linear(in_features=9216, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+
+Train start
+Training: 1 epoch. 100 iteration. Loss:0.25300902128219604
+Training: 1 epoch. 200 iteration. Loss:0.16719667613506317
+Training: 1 epoch. 300 iteration. Loss:0.12017510831356049
+Training: 1 epoch. 400 iteration. Loss:0.03379755839705467
+Training: 1 epoch. 500 iteration. Loss:0.04214926064014435
+Training: 1 epoch. 600 iteration. Loss:0.1353117674589157
+Training: 1 epoch. 700 iteration. Loss:0.11799649149179459
+Training: 1 epoch. 800 iteration. Loss:0.03081313893198967
+Training: 1 epoch. 900 iteration. Loss:0.0326063334941864
+Training loss (ave.): 0.1858100246291544
+
+Validation start
+Validation loss: 0.05069574986696243, Accuracy: 0.9828
+
+
+Train start
+Training: 2 epoch. 100 iteration. Loss:0.057613275945186615
+Training: 2 epoch. 200 iteration. Loss:0.14412523806095123
+Training: 2 epoch. 300 iteration. Loss:0.134660005569458
+Training: 2 epoch. 400 iteration. Loss:0.0688762441277504
+Training: 2 epoch. 500 iteration. Loss:0.04708591848611832
+Training: 2 epoch. 600 iteration. Loss:0.023136911913752556
+Training: 2 epoch. 700 iteration. Loss:0.008210137486457825
+Training: 2 epoch. 800 iteration. Loss:0.28627416491508484
+Training: 2 epoch. 900 iteration. Loss:0.018706079572439194
+Training loss (ave.): 0.08028655498127725
+
+Validation start
+Validation loss: 0.04345121643375605, Accuracy: 0.9857
+
+
+Train start
+Training: 3 epoch. 100 iteration. Loss:0.03108360432088375
+Training: 3 epoch. 200 iteration. Loss:0.06488023698329926
+Training: 3 epoch. 300 iteration. Loss:0.014606611803174019
+Training: 3 epoch. 400 iteration. Loss:0.012946146540343761
+Training: 3 epoch. 500 iteration. Loss:0.0982566773891449
+Training: 3 epoch. 600 iteration. Loss:0.14714203774929047
+Training: 3 epoch. 700 iteration. Loss:0.0274475309997797
+Training: 3 epoch. 800 iteration. Loss:0.07337071746587753
+Training: 3 epoch. 900 iteration. Loss:0.06255213171243668
+Training loss (ave.): 0.06020380557687985
+
+Validation start
+Validation loss: 0.032455676249973475, Accuracy: 0.9887
+
+
+Train start
+Training: 4 epoch. 100 iteration. Loss:0.04909628629684448
+Training: 4 epoch. 200 iteration. Loss:0.0357927531003952
+Training: 4 epoch. 300 iteration. Loss:0.007024206221103668
+Training: 4 epoch. 400 iteration. Loss:0.019718196243047714
+Training: 4 epoch. 500 iteration. Loss:0.02331593446433544
+Training: 4 epoch. 600 iteration. Loss:0.055898576974868774
+Training: 4 epoch. 700 iteration. Loss:0.02018718793988228
+Training: 4 epoch. 800 iteration. Loss:0.02157016657292843
+Training: 4 epoch. 900 iteration. Loss:0.0351087860763073
+Training loss (ave.): 0.049375186943243554
+
+Validation start
+Validation loss: 0.031097800190607088, Accuracy: 0.9904
+
+
+Train start
+Training: 5 epoch. 100 iteration. Loss:0.18184490501880646
+Training: 5 epoch. 200 iteration. Loss:0.008185823448002338
+Training: 5 epoch. 300 iteration. Loss:0.0034163182135671377
+Training: 5 epoch. 400 iteration. Loss:0.06559005379676819
+Training: 5 epoch. 500 iteration. Loss:0.019854124635457993
+Training: 5 epoch. 600 iteration. Loss:0.003944615367799997
+Training: 5 epoch. 700 iteration. Loss:0.06632916629314423
+Training: 5 epoch. 800 iteration. Loss:0.009675100445747375
+Training: 5 epoch. 900 iteration. Loss:0.0020838521886616945
+Training loss (ave.): 0.04156893270109087
+
+Validation start
+Validation loss: 0.03546370741806459, Accuracy: 0.9891
+
+
+Train start
+Training: 6 epoch. 100 iteration. Loss:0.008357048965990543
+Training: 6 epoch. 200 iteration. Loss:0.0665101557970047
+Training: 6 epoch. 300 iteration. Loss:0.0026273131370544434
+Training: 6 epoch. 400 iteration. Loss:0.044866062700748444
+Training: 6 epoch. 500 iteration. Loss:0.12413741648197174
+Training: 6 epoch. 600 iteration. Loss:0.03223546966910362
+Training: 6 epoch. 700 iteration. Loss:0.028354190289974213
+Training: 6 epoch. 800 iteration. Loss:0.02311939373612404
+Training: 6 epoch. 900 iteration. Loss:0.01825346238911152
+Training loss (ave.): 0.03683060394439435
+
+Validation start
+Validation loss: 0.028403930954984388, Accuracy: 0.9918
+
+
+Train start
+Training: 7 epoch. 100 iteration. Loss:0.018309954553842545
+Training: 7 epoch. 200 iteration. Loss:0.03621070086956024
+Training: 7 epoch. 300 iteration. Loss:0.06748510897159576
+Training: 7 epoch. 400 iteration. Loss:0.005270346533507109
+Training: 7 epoch. 500 iteration. Loss:0.003104269038885832
+Training: 7 epoch. 600 iteration. Loss:0.014385874383151531
+Training: 7 epoch. 700 iteration. Loss:0.005016476847231388
+Training: 7 epoch. 800 iteration. Loss:0.012520860880613327
+Training: 7 epoch. 900 iteration. Loss:0.03147989138960838
+Training loss (ave.): 0.03356926248587014
+
+Validation start
+Validation loss: 0.03172443930818699, Accuracy: 0.9917
+
+
+Train start
+Training: 8 epoch. 100 iteration. Loss:0.0034982154611498117
+Training: 8 epoch. 200 iteration. Loss:0.07354076206684113
+Training: 8 epoch. 300 iteration. Loss:0.05616965517401695
+Training: 8 epoch. 400 iteration. Loss:0.0058937049470841885
+Training: 8 epoch. 500 iteration. Loss:0.0007248262409120798
+Training: 8 epoch. 600 iteration. Loss:0.04553164541721344
+Training: 8 epoch. 700 iteration. Loss:0.02672479674220085
+Training: 8 epoch. 800 iteration. Loss:0.0038987728767096996
+Training: 8 epoch. 900 iteration. Loss:0.0018287732964381576
+Training loss (ave.): 0.029315641251292008
+
+Validation start
+Validation loss: 0.03307679608448525, Accuracy: 0.9902
+
+
+Train start
+Training: 9 epoch. 100 iteration. Loss:0.004701143130660057
+Training: 9 epoch. 200 iteration. Loss:0.000863099645357579
+Training: 9 epoch. 300 iteration. Loss:0.005756963510066271
+Training: 9 epoch. 400 iteration. Loss:0.09793379157781601
+Training: 9 epoch. 500 iteration. Loss:0.049798160791397095
+Training: 9 epoch. 600 iteration. Loss:0.09484169632196426
+Training: 9 epoch. 700 iteration. Loss:0.004045761656016111
+Training: 9 epoch. 800 iteration. Loss:0.010263531468808651
+Training: 9 epoch. 900 iteration. Loss:0.023082653060555458
+Training loss (ave.): 0.02766727490218675
+
+Validation start
+Validation loss: 0.02715250449317973, Accuracy: 0.9925
+
+
+Train start
+Training: 10 epoch. 100 iteration. Loss:0.034396134316921234
+Training: 10 epoch. 200 iteration. Loss:0.09019283205270767
+Training: 10 epoch. 300 iteration. Loss:0.0016162842512130737
+Training: 10 epoch. 400 iteration. Loss:0.0004273355007171631
+Training: 10 epoch. 500 iteration. Loss:0.00459264125674963
+Training: 10 epoch. 600 iteration. Loss:0.028823092579841614
+Training: 10 epoch. 700 iteration. Loss:0.003013832960277796
+Training: 10 epoch. 800 iteration. Loss:0.005796591751277447
+Training: 10 epoch. 900 iteration. Loss:0.012414347380399704
+Training loss (ave.): 0.025557295224593473
+
+Validation start
+Validation loss: 0.029984242906433065, Accuracy: 0.9924
+
+
+Train start
+Training: 11 epoch. 100 iteration. Loss:0.00023333844728767872
+Training: 11 epoch. 200 iteration. Loss:0.01197302620857954
+Training: 11 epoch. 300 iteration. Loss:0.06036393716931343
+Training: 11 epoch. 400 iteration. Loss:0.001078723231330514
+Training: 11 epoch. 500 iteration. Loss:0.0031179003417491913
+Training: 11 epoch. 600 iteration. Loss:0.036725856363773346
+Training: 11 epoch. 700 iteration. Loss:0.0019300364656373858
+Training: 11 epoch. 800 iteration. Loss:0.1425676941871643
+Training: 11 epoch. 900 iteration. Loss:0.005806026514619589
+Training loss (ave.): 0.02247547808731478
+
+Validation start
+Validation loss: 0.026914409920915205, Accuracy: 0.9921
+
+
+Train start
+Training: 12 epoch. 100 iteration. Loss:0.0032395499292761087
+Training: 12 epoch. 200 iteration. Loss:0.015738213434815407
+Training: 12 epoch. 300 iteration. Loss:0.006254394073039293
+Training: 12 epoch. 400 iteration. Loss:0.011258997954428196
+Training: 12 epoch. 500 iteration. Loss:0.03297002241015434
+Training: 12 epoch. 600 iteration. Loss:0.0677628368139267
+Training: 12 epoch. 700 iteration. Loss:0.018080957233905792
+Training: 12 epoch. 800 iteration. Loss:0.015820175409317017
+Training: 12 epoch. 900 iteration. Loss:0.0002811098238453269
+Training loss (ave.): 0.021140818128353167
+
+Validation start
+Validation loss: 0.030667436079063918, Accuracy: 0.992
+
+
+Train start
+Training: 13 epoch. 100 iteration. Loss:0.05786656588315964
+Training: 13 epoch. 200 iteration. Loss:0.05874059721827507
+Training: 13 epoch. 300 iteration. Loss:0.00655731838196516
+Training: 13 epoch. 400 iteration. Loss:0.007165691815316677
+Training: 13 epoch. 500 iteration. Loss:0.0010189884342253208
+Training: 13 epoch. 600 iteration. Loss:0.0039252834394574165
+Training: 13 epoch. 700 iteration. Loss:0.00976260844618082
+Training: 13 epoch. 800 iteration. Loss:0.005810988135635853
+Training: 13 epoch. 900 iteration. Loss:0.0037049129605293274
+Training loss (ave.): 0.019964418328794857
+
+Validation start
+Validation loss: 0.030833541418574167, Accuracy: 0.9915
+
+
+Train start
+Training: 14 epoch. 100 iteration. Loss:0.0006174272857606411
+Training: 14 epoch. 200 iteration. Loss:0.00015626286040060222
+Training: 14 epoch. 300 iteration. Loss:0.014102655462920666
+Training: 14 epoch. 400 iteration. Loss:0.11858879029750824
+Training: 14 epoch. 500 iteration. Loss:0.0002308662369614467
+Training: 14 epoch. 600 iteration. Loss:0.0019026240333914757
+Training: 14 epoch. 700 iteration. Loss:0.010877436958253384
+Training: 14 epoch. 800 iteration. Loss:0.012535830028355122
+Training: 14 epoch. 900 iteration. Loss:0.028494231402873993
+Training loss (ave.): 0.01886243043838616
+
+Validation start
+Validation loss: 0.02941125731342854, Accuracy: 0.9927
+
+
+Train start
+Training: 15 epoch. 100 iteration. Loss:0.0002849154407158494
+Training: 15 epoch. 200 iteration. Loss:0.003936095163226128
+Training: 15 epoch. 300 iteration. Loss:0.0009669856517575681
+Training: 15 epoch. 400 iteration. Loss:0.00027920541469939053
+Training: 15 epoch. 500 iteration. Loss:0.004528520163148642
+Training: 15 epoch. 600 iteration. Loss:0.0005807569250464439
+Training: 15 epoch. 700 iteration. Loss:0.0021546611096709967
+Training: 15 epoch. 800 iteration. Loss:0.0001384349598083645
+Training: 15 epoch. 900 iteration. Loss:0.05576533079147339
+Training loss (ave.): 0.017356265094440652
+
+Validation start
+Validation loss: 0.037105614710044754, Accuracy: 0.9919
+
+
+Train start
+Training: 16 epoch. 100 iteration. Loss:0.005486372392624617
+Training: 16 epoch. 200 iteration. Loss:0.0008959396509453654
+Training: 16 epoch. 300 iteration. Loss:0.003251439891755581
+Training: 16 epoch. 400 iteration. Loss:0.00473212031647563
+Training: 16 epoch. 500 iteration. Loss:0.003699115477502346
+Training: 16 epoch. 600 iteration. Loss:0.02550203911960125
+Training: 16 epoch. 700 iteration. Loss:0.0007925000390969217
+Training: 16 epoch. 800 iteration. Loss:0.015979761257767677
+Training: 16 epoch. 900 iteration. Loss:0.10563413053750992
+Training loss (ave.): 0.017858037229596595
+
+Validation start
+Validation loss: 0.038442101964908944, Accuracy: 0.9915
+
+
+Train start
+Training: 17 epoch. 100 iteration. Loss:0.0008077298989519477
+Training: 17 epoch. 200 iteration. Loss:0.0004390458343550563
+Training: 17 epoch. 300 iteration. Loss:0.004712534137070179
+Training: 17 epoch. 400 iteration. Loss:0.01605779491364956
+Training: 17 epoch. 500 iteration. Loss:0.000246379611780867
+Training: 17 epoch. 600 iteration. Loss:0.002650961047038436
+Training: 17 epoch. 700 iteration. Loss:0.0012264950200915337
+Training: 17 epoch. 800 iteration. Loss:0.0004054813471157104
+Training: 17 epoch. 900 iteration. Loss:0.0374925471842289
+Training loss (ave.): 0.01752889271032713
+
+Validation start
+Validation loss: 0.04019752163443627, Accuracy: 0.989
+
+
+Train start
+Training: 18 epoch. 100 iteration. Loss:0.00014753638242837042
+Training: 18 epoch. 200 iteration. Loss:0.0135859539732337
+Training: 18 epoch. 300 iteration. Loss:0.013234535232186317
+Training: 18 epoch. 400 iteration. Loss:0.00307695334777236
+Training: 18 epoch. 500 iteration. Loss:0.016561759635806084
+Training: 18 epoch. 600 iteration. Loss:0.0003954356361646205
+Training: 18 epoch. 700 iteration. Loss:0.010994885116815567
+Training: 18 epoch. 800 iteration. Loss:0.0003962867194786668
+Training: 18 epoch. 900 iteration. Loss:0.000324322929373011
+Training loss (ave.): 0.014966256572756768
+
+Validation start
+Validation loss: 0.03502070566959046, Accuracy: 0.9927
+
+
+Train start
+Training: 19 epoch. 100 iteration. Loss:0.0010669665643945336
+Training: 19 epoch. 200 iteration. Loss:0.00112000887747854
+Training: 19 epoch. 300 iteration. Loss:0.008306682109832764
+Training: 19 epoch. 400 iteration. Loss:0.00450173718854785
+Training: 19 epoch. 500 iteration. Loss:0.00785616971552372
+Training: 19 epoch. 600 iteration. Loss:0.022084491327404976
+Training: 19 epoch. 700 iteration. Loss:0.0018890186911448836
+Training: 19 epoch. 800 iteration. Loss:0.00195514434017241
+Training: 19 epoch. 900 iteration. Loss:0.0015546579379588366
+Training loss (ave.): 0.015595289110128887
+
+Validation start
+Validation loss: 0.036239935962597884, Accuracy: 0.9921
+
+
+Train start
+Training: 20 epoch. 100 iteration. Loss:6.403518636943772e-05
+Training: 20 epoch. 200 iteration. Loss:0.007587869185954332
+Training: 20 epoch. 300 iteration. Loss:0.0054999347776174545
+Training: 20 epoch. 400 iteration. Loss:0.003878444666042924
+Training: 20 epoch. 500 iteration. Loss:0.003122314577922225
+Training: 20 epoch. 600 iteration. Loss:0.014246311038732529
+Training: 20 epoch. 700 iteration. Loss:0.0029911042656749487
+Training: 20 epoch. 800 iteration. Loss:0.08580821752548218
+Training: 20 epoch. 900 iteration. Loss:0.00179292110260576
+Training loss (ave.): 0.014092774949332223
+
+Validation start
+Validation loss: 0.03248614261912626, Accuracy: 0.9931
+

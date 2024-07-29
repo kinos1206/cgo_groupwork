@@ -1,0 +1,44 @@
+Hill climbing(山登り法) Summary --epoch 100
+random.seed(0), noise_probability=0.5
+初期条件変更なし(--activation 0 --optimizer 0)
+Total epochs: 59
+Elapsed time (total): 651.44 seconds
+Elapsed time (optimization): 522.681531
+Accuracy with optimized parameters: 0.990600
+
+
+初期条件変更(--activation 0 --optimizer 1)
+Total epochs: 46
+Elapsed time (total): 600.23 seconds
+Elapsed time (optimization): 423.972601
+Accuracy with optimized parameters: 0.990700
+
+初期条件変更(--activation 3 --optimizer 0)
+Total epochs: 68
+Elapsed time (total): 797.01 seconds
+Elapsed time (optimization): 615.856388
+Accuracy with optimized parameters: 0.992100
+
+
+
+
+Hill climbing(山登り法) Summary --epoch 200 
+random.seed(0), noise_probability=0.5
+初期条件変更なし(--activation 0 --optimizer 0)
+Total epochs: 42
+Elapsed time (total): 582.83 seconds
+Elapsed time (optimization): 398.040926
+Accuracy with optimized parameters: 0.992600
+初期条件変更(--activation 0 --optimizer 1)
+Total epochs: 102
+Elapsed time (total): 963.42 seconds
+Elapsed time (optimization): 876.130498
+Accuracy with optimized parameters: 0.992200
+初期条件変更(--activation 3 --optimizer 0)
+Total epochs: 62
+Elapsed time (total): 664.50 seconds
+Elapsed time (optimization): 533.058446
+Accuracy with optimized parameters: 0.990100
+
+
+

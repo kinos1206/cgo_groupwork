@@ -1,4 +1,5 @@
 import os
+import random
 import time
 from typing import Sized
 
@@ -10,10 +11,11 @@ from matplotlib import pyplot as plt
 from dataloader import load_MNIST
 from Network import MyNet
 from options import Options
-from single_state_tune import HillClimbScheduler
+from single_state_tune import HillClimbScheduler, RandomHillClimbScheduler
 from tune import MyScheduler, MySchedulerGA, MySchedulerGS, MySchedulerPSO
 
 # 引数の読み込み
+random.seed(0)  # for reproducibility
 opt = Options().parse()
 initail_opt = opt
 dirname = f'./logs/{opt.search_method}_{time.strftime("%Y%m%d_%H%M%S")}'
@@ -27,6 +29,9 @@ elif opt.search_method == 'grid':
     scheduler = MySchedulerGS(opt)
 elif opt.search_method == 'hill':
     scheduler = HillClimbScheduler(opt)
+    scheduler.dirname = dirname
+elif opt.search_method == 'randhill':
+    scheduler = RandomHillClimbScheduler(opt)
     scheduler.dirname = dirname
 else:
     scheduler = MyScheduler(opt)

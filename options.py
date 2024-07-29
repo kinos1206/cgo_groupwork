@@ -1,5 +1,6 @@
 import argparse
 import os
+import sys
 from dataclasses import dataclass
 
 import torch
@@ -32,7 +33,7 @@ class Options:
         self.initialized = False
 
     def initialize(self):
-        self.parser.add_argument('--epoch_limit', type=int, default=100, help='input limit of epoch')
+        self.parser.add_argument('--epoch_limit', type=int, default=sys.maxsize, help='input limit of epoch')
         self.parser.add_argument('--epoch_min', type=int, default=5, help='input minimum number of epoch')
         self.parser.add_argument('--batchSize', type=int, default=64, help='input initial batch size')
         self.parser.add_argument('--epoch', type=int, default=20, help='input initial epoch')
